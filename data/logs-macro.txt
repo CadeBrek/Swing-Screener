@@ -1,12 +1,21 @@
-Extensions to add: bls@2.0.0, cboe@2.0.0, cftc@2.0.0, congress_gov@2.0.0, deribit@2.0.0, ecb@2.0.0, eia@2.0.0, famafrench@2.0.0, federal_reserve@2.0.0, finra@2.0.0, fred@2.0.0, imf@3.0.0, jodi@2.0.0, nasdaq@2.0.0, news@2.0.0, oecd@2.0.0, openbb_charting@4.0.0, sec@2.0.0, tmx@2.0.0, us_eia@2.0.0, us_treasury@2.0.0, uscongress@2.0.0, usda@2.0.0, ustreasury@2.0.0
+Extensions to add: bls@2.0.0, cboe@2.0.0, cftc@2.0.0, congress_gov@2.0.0, deribit@2.0.0, ecb@2.0.0, economy@2.0.0, eia@2.0.0, famafrench@2.0.0, federal_reserve@2.0.0, finra@2.0.0, fixedincome@2.0.0, fred@2.0.0, imf@3.0.0, jodi@2.0.0, nasdaq@2.0.0, news@2.0.0, oecd@2.0.0, openbb_charting@4.0.0, sec@2.0.0, tmx@2.0.0, us_eia@2.0.0, us_treasury@2.0.0, uscongress@2.0.0, usda@2.0.0, ustreasury@2.0.0
 
 Building...
 {
  "date": "2026-11-11",
  "source": "OpenBB (Federal Reserve; FRED when a key is set)",
+ "treasury_yields_pct": {
+  "month_3": 4.24,
+  "year_2": 4.56,
+  "year_10": 4.88,
+  "year_30": 5.26
+ },
+ "yields_as_of": "2026-11-09",
+ "spread_2s10s_pct": 0.32,
+ "spread_3m10y_pct": 0.64,
+ "curve_read": "normal (10y above 3m)",
+ "ten_year_change_1y_pct": 0.77,
+ "fed_funds_effective_pct": 3.88,
  "fred": "not set up (add a free FRED key as the GitHub secret FRED_API_KEY for CPI, unemployment, credit spreads)",
- "errors": [
-  "treasury curve: AttributeError: 'App' object has no attribute 'fixedincome'",
-  "fed funds: AttributeError: 'App' object has no attribute 'fixedincome'"
- ]
+ "errors": []
 }
