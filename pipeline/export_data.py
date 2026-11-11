@@ -19,12 +19,12 @@ def main():
     start = pd.Timestamp.today() - pd.DateOffset(years=research.YEARS + 2)
     ever = set().union(*[s for d, s in zip(mdates, msets) if d >= start - pd.DateOffset(years=1)])
     ever = {t for t in ever if t not in SECOND_CLASS}
-    bars = download(ever | {"SPY", "BIL"}, period=f"{research.YEARS + 2}y")
+    bars = download(ever | {"SPY", "BIL"}, period=f"{research.YEARS + 2}y", adj=True)
     idx = bars["SPY"].index
     os.makedirs(OUT, exist_ok=True)
-    for f in ("Close", "High", "Low", "Volume"):
-        df = pd.DataFrame({s: d[f] for s, d in bars.items()}).reindex(idx).astype("float32")
-        df.to_parquet(os.path.join(OUT, f"{f.lower()}.parquet"), compression="zstd")
+    for f in ("Close", "High", "Low", "Volume", "Adj Close"):
+        df = pd.DataFrame({s: d[f] for s, d in bars.items() if f in d}).reindex(idx).astype("float32")
+        df.to_parquet(os.path.join(OUT, f"{f.lower().replace(' ', '')}.parquet"), compression="zstd")
     keep = [(str(d.date()), sorted(s)) for d, s in zip(mdates, msets) if d >= start - pd.DateOffset(years=2)]
     json.dump({"source": src, "snapshots": keep}, open(os.path.join(OUT, "membership.json"), "w"))
     json.dump(sectors(sorted(s for s in ever if s in bars)), open(os.path.join(OUT, "sectors.json"), "w"))

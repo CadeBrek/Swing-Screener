@@ -48,8 +48,9 @@ def yahoo(sym):
     return sym.replace(".", "-")
 
 
-def download(symbols, period="2y", tries=3):
-    """Daily OHLCV for many symbols. Returns {SYM: DataFrame[Open, High, Low, Close, Volume]}, unadjusted."""
+def download(symbols, period="2y", tries=3, adj=False):
+    """Daily OHLCV for many symbols. Returns {SYM: DataFrame[Open, High, Low, Close, Volume]}, unadjusted
+    (Close is split-adjusted but excludes dividends). adj=True adds "Adj Close" (dividends reinvested)."""
     symbols = sorted({yahoo(s) for s in symbols})
     out = {}
     for chunk_start in range(0, len(symbols), 100):
@@ -66,7 +67,8 @@ def download(symbols, period="2y", tries=3):
         for s in chunk:
             try:
                 d = df[s] if isinstance(df.columns, pd.MultiIndex) else df
-                d = d[["Open", "High", "Low", "Close", "Volume"]].dropna(subset=["Close"])
+                cols = ["Open", "High", "Low", "Close", "Volume"] + (["Adj Close"] if adj and "Adj Close" in d else [])
+                d = d[cols].dropna(subset=["Close"])
             except KeyError:
                 continue
             if len(d):

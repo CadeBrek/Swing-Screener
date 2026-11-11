@@ -31,6 +31,7 @@ import rules_v1 as rules
 from backtest import months_back_rows, sectors, SECOND_CLASS
 
 IS_END = pd.Timestamp("2021-12-31")
+ADJ = [False]   # set when dividend-adjusted prices are used
 YEARS = 11
 t0 = time.time()
 ALIAS = {"FB": "META", "ANTM": "ELV", "FISV": "FI", "BRK.B": "BRK-B", "BF.B": "BF-B", "RTN": "RTX", "UTX": "RTX",
@@ -88,6 +89,45 @@ def members_on(d, mdates, msets):
     return msets[max(k, 0)]
 
 
+def load_inputs():
+    """From an export folder (RESEARCH_DATA=path, made by export_data.py) or straight from the web."""
+    src = os.environ.get("RESEARCH_DATA")
+    if src:
+        rd = lambda f: pd.read_parquet(os.path.join(src, f"{f}.parquet")).astype("float64")
+        Cx, Hx, Lx, Vx = rd("close"), rd("high"), rd("low"), rd("volume")
+        if os.path.exists(os.path.join(src, "adjclose.parquet")):
+            # total-return prices: dividends reinvested (matters for SPY and for cash in BIL);
+            # highs and lows scaled by the same factor so ATR stays consistent
+            A = rd("adjclose").reindex(columns=Cx.columns)
+            f = (A / Cx).where(A.notna(), 1.0)
+            Cx, Hx, Lx = Cx * f, Hx * f, Lx * f
+            ADJ[0] = True
+        mem = json.load(open(os.path.join(src, "membership.json")))
+        mdates = [pd.Timestamp(d) for d, _ in mem["snapshots"]]
+        msets = [set(t) for _, t in mem["snapshots"]]
+        sec = json.load(open(os.path.join(src, "sectors.json")))
+        msrc = mem["source"]
+    else:
+        mdates, msets, msrc = membership()
+        start = pd.Timestamp.today() - pd.DateOffset(years=YEARS + 2)
+        ever = set().union(*[s for d, s in zip(mdates, msets) if d >= start - pd.DateOffset(years=1)])
+        bars = download({t for t in ever if t not in SECOND_CLASS} | {"SPY", "BIL"}, period=f"{YEARS + 2}y")
+        idx = bars["SPY"].index
+        Cx, Hx, Lx, Vx = [pd.DataFrame({k: d[f] for k, d in bars.items()}).reindex(idx) for f in ("Close", "High", "Low", "Volume")]
+        sec = None
+    Cx = Cx.dropna(subset=["SPY"])
+    idx = Cx.index
+    start = idx[-1] - pd.DateOffset(years=YEARS + 2)
+    ever = set().union(*[s for d, s in zip(mdates, msets) if d >= start - pd.DateOffset(years=1)])
+    ever = {t for t in ever if t not in SECOND_CLASS}
+    stocks = sorted(t for t in ever if t in Cx.columns and Cx[t].notna().any())
+    if sec is None:
+        sec = sectors(stocks)
+    spy = Cx["SPY"]; bil = Cx["BIL"].reindex(idx).ffill()
+    pick = lambda X: X.reindex(idx)[stocks]
+    return mdates, msets, msrc, pick(Cx), pick(Hx), pick(Lx), pick(Vx), spy, bil, sec, len(ever)
+
+
 # ---------------------------------------------------------------- metrics
 def metrics(v, spy_v):
     v = v.dropna(); spy_v = spy_v.reindex(v.index).ffill()
@@ -116,21 +156,10 @@ def windows(v, spy_v, start):
 
 # ---------------------------------------------------------------- main
 def main():
-    mdates, msets, msrc = membership()
-    start_data = pd.Timestamp.today() - pd.DateOffset(years=YEARS + 2)
-    ever = set().union(*[s for d, s in zip(mdates, msets) if d >= start_data - pd.DateOffset(years=1)])
-    ever = {t for t in ever if t not in SECOND_CLASS}
-    log(f"membership: {msrc}; {len(ever)} tickers were in the index during the window")
-    bars = download(ever | {"SPY", "BIL"}, period=f"{YEARS + 2}y")
-    stocks = sorted(t for t in ever if t in bars)
-    log(f"Yahoo price history for {len(stocks)} of {len(ever)} ({len(ever) - len(stocks)} missing: mostly removed/acquired)")
-    idx = bars["SPY"].index
-    C = pd.DataFrame({s: bars[s]["Close"] for s in stocks}).reindex(idx)
-    H = pd.DataFrame({s: bars[s]["High"] for s in stocks}).reindex(idx)
-    L = pd.DataFrame({s: bars[s]["Low"] for s in stocks}).reindex(idx)
-    V = pd.DataFrame({s: bars[s]["Volume"] for s in stocks}).reindex(idx)
-    spy = bars["SPY"]["Close"]; bil = bars["BIL"]["Close"].reindex(idx).ffill()
-    sec = sectors(stocks)
+    mdates, msets, msrc, C, H, L, V, spy, bil, sec, n_ever = load_inputs()
+    stocks = list(C.columns)
+    idx = C.index
+    log(f"membership: {msrc}; {n_ever} tickers in the index during the window, {len(stocks)} with prices")
 
     Cf = C.ffill(); nbars = C.notna().cumsum()
     ma50 = C.rolling(50, min_periods=1).mean(); ma200 = C.rolling(200, min_periods=1).mean()
@@ -170,18 +199,18 @@ def main():
         sc = rules.score(df, {m: spyr[m].loc[d] for m in (1, 3, 6, 12)})
         sc["atr"] = atr.loc[d, sc.symbol].values
         return sc
-    coverage = []
+    coverage = []; sec_set = set(stocks)
     F100 = {}; FALL = {}
     for d in sorted(set(weeks) | set(months)):   # month starts are not always Mondays
         F100[d] = frame(d, 100)
         FALL[d] = frame(d)
         mem = members_on(d, mdates, msets)
-        coverage.append(len([s for s in mem if s in bars]) / max(len(mem), 1))
+        coverage.append(len([s for s in mem if s in sec_set]) / max(len(mem), 1))
     log(f"scored every week; average share of index members with price data: {np.mean(coverage):.0%}")
 
     test = idx >= weeks[0]
     spy_v = spy[test] / spy[test].iloc[0] * 50_000
-    results = {"membership_source": msrc, "coverage_pct": round(float(np.mean(coverage)) * 100, 1),
+    results = {"dividend_adjusted": ADJ[0], "membership_source": msrc, "coverage_pct": round(float(np.mean(coverage)) * 100, 1),
                "window": [str(weeks[0].date()), str(idx[-1].date())], "in_sample_end": str(IS_END.date())}
 
     # ---------------- benchmarks

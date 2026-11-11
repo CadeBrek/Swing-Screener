@@ -2,6 +2,7 @@
 
 Changing anything here is a rules change: bump RULES_VERSION and add a rules.json changelog entry.
 """
+import numpy as np
 import pandas as pd
 
 RULES_VERSION = "v1"
@@ -30,8 +31,8 @@ def score(df, spy, rs_gate=RS_GATE):
     """df columns: symbol, price, hi52, ma50, ma200, r1m, r3m, r6m, r1y (+ ysector).
     spy: {1: r1m, 3: r3m, 6: r6m, 12: r1y} for SPY. Returns a new frame sorted by final score."""
     df = df.dropna(subset=["r1m", "r3m", "r6m", "r1y", "ma50", "ma200"]).reset_index(drop=True).copy()
-    df["rs3"] = df.apply(lambda r: skip1(r.r3m, r.r1m), axis=1) - skip1(spy[3], spy[1])
-    df["rs6"] = df.apply(lambda r: skip1(r.r6m, r.r1m), axis=1) - skip1(spy[6], spy[1])
+    df["rs3"] = skip1(df.r3m, df.r1m) - skip1(spy[3], spy[1])
+    df["rs6"] = skip1(df.r6m, df.r1m) - skip1(spy[6], spy[1])
     df["rs12"] = df["r1y"] - spy[12]
     df["rs_score"] = 0.4 * pct_rank(df["rs6"]) + 0.4 * pct_rank(df["rs3"]) + 0.2 * pct_rank(df["rs12"])
     df["rs_pct"] = pct_rank(df["rs_score"]).round().astype(int)
@@ -40,13 +41,10 @@ def score(df, spy, rs_gate=RS_GATE):
     df["off_high"] = (df.price / df.hi52 - 1) * 100
     df["ext_50"] = (df.price / df.ma50 - 1) * 100
 
-    def why(r):
-        w = []
-        if not r.price > r.ma200: w.append("below 200-day")
-        if not r.ma50 > r.ma200: w.append("50-day below 200-day")
-        if not r.rs_pct >= rs_gate: w.append(f"RS rank < {rs_gate}")
-        return ", ".join(w)
-    df["why_not"] = df.apply(why, axis=1)
+    f1 = ~(df.price > df.ma200); f2 = ~(df.ma50 > df.ma200); f3 = ~(df.rs_pct >= rs_gate)
+    parts = [np.where(f1, "below 200-day", ""), np.where(f2, "50-day below 200-day", ""),
+             np.where(f3, f"RS rank < {rs_gate}", "")]
+    df["why_not"] = [", ".join(x for x in t if x) for t in zip(*parts)]
     df["passes"] = df["why_not"] == ""
     df["final"] = 0.5 * df.rs_pct + 0.35 * (df.trend / 4 * 100) + 0.15 * (100 + df.off_high * 4).clip(lower=0)
     if "ysector" in df:
