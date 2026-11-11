@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+# keep live data out of the repo
+state*.json
+prices.json
+scratch/
