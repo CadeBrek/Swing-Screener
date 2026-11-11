@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 .DS_Store
-# keep live data out of the repo
-state*.json
-prices.json
-scratch/
+# keep live portfolio state out of the repo (top level only; data/ files are meant to be saved)
+/state*.json
+/prices.json
+/scratch/
