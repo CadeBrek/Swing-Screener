@@ -1,0 +1,42 @@
+name: Export research data
+
+# Prices + point-in-time S&P 500 membership + sectors, pushed to the `research-data` branch
+# (not main, to keep main small). Runs on demand.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['pipeline/export_data.py', 'data/run-export']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-research.txt
+      - name: Export
+        shell: bash
+        run: python pipeline/export_data.py 2>&1 | tee export-log.txt
+      - name: Push to the research-data branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p data/export && cp export-log.txt data/export/log.txt
+          git checkout --orphan research-data-tmp
+          git rm -rf --cached . > /dev/null
+          git add -f data/export
+          git commit -m "Research data export: $(date -u +%F)"
+          git push -f origin HEAD:research-data
