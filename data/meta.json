@@ -398,5 +398,9 @@
  "BKNG": {
   "sector": "Consumer Cyclical",
   "industry": "Travel Services"
+ },
+ "COF": {
+  "sector": "Financial Services",
+  "industry": "Credit Services"
  }
 }
