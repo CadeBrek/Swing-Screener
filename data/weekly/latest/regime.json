@@ -13,19 +13,19 @@
  },
  {
   "metric": "VIX",
-  "value": 17.66,
+  "value": 17.52,
   "unit": "",
   "read": ""
  },
  {
   "metric": "Momentum factor vs S&P, 3-month",
-  "value": -8.51,
+  "value": -8.53,
   "unit": "%",
   "read": ""
  },
  {
   "metric": "Small caps vs S&P, 3-month",
-  "value": -2.9,
+  "value": -2.84,
   "unit": "%",
   "read": ""
  },
@@ -37,7 +37,7 @@
  },
  {
   "metric": "WTI crude",
-  "value": 87.0,
+  "value": 86.21,
   "unit": "$",
   "read": ""
  }
