@@ -13,7 +13,12 @@ gifts (G) and zero-price rows are ignored. Information only: never changes score
 import time, datetime as dt, xml.etree.ElementTree as ET
 import requests
 
-UA = {"User-Agent": "CadeBrek swing-screener CadeBrek@users.noreply.github.com"}
+# SEC asks automated tools to identify themselves; it refuses some formats from cloud servers,
+# so try a few and remember the first that works.
+UAS = ["Cade Brekken CadeBrek@users.noreply.github.com",
+       "CadeBrek-swing-screener/1.0 (+https://github.com/CadeBrek; CadeBrek@users.noreply.github.com)",
+       "Mozilla/5.0 (compatible; CadeBrek-research; CadeBrek@users.noreply.github.com)"]
+UA = {"User-Agent": UAS[0], "Accept-Encoding": "gzip, deflate"}
 _ticker_map = None
 
 
@@ -33,7 +38,16 @@ def _get(url, **kw):
 def cik_for(sym):
     global _ticker_map
     if _ticker_map is None:
-        js = _get("https://www.sec.gov/files/company_tickers.json").json()
+        last = None
+        for ua in UAS:
+            UA["User-Agent"] = ua
+            try:
+                js = _get("https://www.sec.gov/files/company_tickers.json").json()
+                break
+            except Exception as e:
+                last = e
+        else:
+            raise last
         _ticker_map = {v["ticker"].upper().replace(".", "-"): int(v["cik_str"]) for v in js.values()}
     return _ticker_map.get(sym.upper().replace(".", "-"))
 

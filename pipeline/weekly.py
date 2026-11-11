@@ -33,6 +33,7 @@ GROUP_OF_SECTOR = {"Energy": "Energy", "Healthcare": "Healthcare", "Technology":
                    "Real Estate": "Real estate", "Communication Services": "Communication"}
 
 ASOF = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--asof=")), None)
+SECOND_CLASS = {"GOOG", "FOX", "NWS", "BRK-A", "BF-A", "UHAL-B"}  # keep GOOGL, FOXA, NWSA, BRK-B ...
 TODAY = dt.date.fromisoformat(ASOF) if ASOF else today_et()
 OUT = f"validation/asof-{ASOF}" if ASOF else "weekly"   # an as-of run never touches the live files
 errors = []
@@ -44,6 +45,7 @@ def sp500():
                             headers={"User-Agent": "Mozilla/5.0 (swing-screener)"}, timeout=30).text
         t = pd.read_html(io.StringIO(html))[0]
         syms = [s.replace(".", "-").upper() for s in t["Symbol"]]
+        syms = [s for s in syms if s not in SECOND_CLASS]  # one listing per company
         if len(syms) > 400:
             return syms
     except Exception as e:
