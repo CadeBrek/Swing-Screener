@@ -2,7 +2,7 @@
  "date": "2026-11-11",
  "data_date": "2026-11-11",
  "market_open": true,
- "finalists_run": null,
+ "finalists_run": "2026-11-11",
  "missing": [],
  "errors": [],
  "ok": true
