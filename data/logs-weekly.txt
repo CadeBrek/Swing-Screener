@@ -1,0 +1,18 @@
+{
+ "run": "2026-11-11",
+ "data_date": "2026-11-11",
+ "rules_version": "v1",
+ "source": "Yahoo Finance (yfinance) + SEC EDGAR",
+ "universe": 100,
+ "passing": 36,
+ "finalists": 8,
+ "regime_extra": {
+  "spy_1m": -2.38,
+  "spy_1y": 11.28,
+  "vix_1m_change": 19.07,
+  "wti_ytd": 52.0,
+  "spy_price": 760.01
+ },
+ "errors": [],
+ "ok": true
+}

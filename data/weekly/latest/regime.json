@@ -1,0 +1,44 @@
+[
+ {
+  "metric": "S&P 500 (SPY) 3-month",
+  "value": -1.37,
+  "unit": "%",
+  "read": ""
+ },
+ {
+  "metric": "S&P 500 (SPY) 6-month",
+  "value": 2.8,
+  "unit": "%",
+  "read": ""
+ },
+ {
+  "metric": "VIX",
+  "value": 17.67,
+  "unit": "",
+  "read": ""
+ },
+ {
+  "metric": "Momentum factor vs S&P, 3-month",
+  "value": -8.46,
+  "unit": "%",
+  "read": ""
+ },
+ {
+  "metric": "Small caps vs S&P, 3-month",
+  "value": -2.9,
+  "unit": "%",
+  "read": ""
+ },
+ {
+  "metric": "10-year Treasury yield",
+  "value": 5.0,
+  "unit": "%",
+  "read": ""
+ },
+ {
+  "metric": "WTI crude",
+  "value": 87.28,
+  "unit": "$",
+  "read": ""
+ }
+]
