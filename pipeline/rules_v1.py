@@ -23,8 +23,7 @@ def skip1(long, r1m):
 
 def pct_rank(series):
     """Share of values <= v, x100 (ties share the higher rank)."""
-    vals = series.tolist()
-    return series.apply(lambda v: sum(1 for x in vals if x <= v) / len(vals) * 100)
+    return series.rank(method="max", pct=True) * 100   # same as counting values <= v; checked identical
 
 
 def score(df, spy, rs_gate=RS_GATE):

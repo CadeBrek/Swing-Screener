@@ -1,0 +1,38 @@
+name: Strategy research
+
+# v1 diagnosis + v2 candidates: in-sample 2015-2021, out-of-sample 2022 on. Runs on demand.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['pipeline/research.py', 'data/run-research']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt -r requirements-research.txt
+      - name: Run research
+        shell: bash
+        run: python pipeline/research.py 2>&1 | tee data/logs-research.txt
+      - name: Save results to the repo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p reports && git add data reports
+          git commit -m "Backtest v1 rules: $(TZ=America/New_York date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep $((i * 7)); done
