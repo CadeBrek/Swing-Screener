@@ -1,0 +1,12 @@
+Extensions to add: bls@2.0.0, cboe@2.0.0, cftc@2.0.0, congress_gov@2.0.0, deribit@2.0.0, ecb@2.0.0, eia@2.0.0, famafrench@2.0.0, federal_reserve@2.0.0, finra@2.0.0, fred@2.0.0, imf@3.0.0, jodi@2.0.0, nasdaq@2.0.0, news@2.0.0, oecd@2.0.0, openbb_charting@4.0.0, sec@2.0.0, tmx@2.0.0, us_eia@2.0.0, us_treasury@2.0.0, uscongress@2.0.0, usda@2.0.0, ustreasury@2.0.0
+
+Building...
+{
+ "date": "2026-11-11",
+ "source": "OpenBB (Federal Reserve; FRED when a key is set)",
+ "fred": "not set up (add a free FRED key as the GitHub secret FRED_API_KEY for CPI, unemployment, credit spreads)",
+ "errors": [
+  "treasury curve: AttributeError: 'App' object has no attribute 'fixedincome'",
+  "fed funds: AttributeError: 'App' object has no attribute 'fixedincome'"
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "date": "2026-11-11",
+ "source": "OpenBB (Federal Reserve; FRED when a key is set)",
+ "fred": "not set up (add a free FRED key as the GitHub secret FRED_API_KEY for CPI, unemployment, credit spreads)",
+ "errors": [
+  "treasury curve: AttributeError: 'App' object has no attribute 'fixedincome'",
+  "fed funds: AttributeError: 'App' object has no attribute 'fixedincome'"
+ ]
+}
