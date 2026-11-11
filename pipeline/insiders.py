@@ -89,13 +89,14 @@ def _money(x):
 
 
 def insider_read(sym, today):
-    """Returns dict(insider_flag, insider_buys_90d, insider_note)."""
+    """Returns dict(insider_flag, insider_buys_90d, insider_note); on failure also "_error" (the reason)."""
     unavailable = {"insider_flag": "Unavailable", "insider_buys_90d": None,
                    "insider_note": "Insider data unavailable this week."}
+    form_errors = []
     try:
         cik = cik_for(sym)
         if not cik:
-            return unavailable
+            return {**unavailable, "_error": "no SEC CIK for this ticker"}
         sub = _get(f"https://data.sec.gov/submissions/CIK{cik:010d}.json").json()
         rec = sub["filings"]["recent"]
         since = today - dt.timedelta(days=90)
@@ -110,7 +111,8 @@ def insider_read(sym, today):
             url = f"https://www.sec.gov/Archives/edgar/data/{cik}/{acc.replace('-', '')}/{raw}"
             try:
                 owners, txns = _parse_form4(_get(url).text)
-            except Exception:
+            except Exception as e:
+                form_errors.append(f"{type(e).__name__}: {e}"[:160])
                 continue
             n_forms += 1
             if not owners:
@@ -129,10 +131,10 @@ def insider_read(sym, today):
                     s["value"] += t["shares"] * t["price"]; s["shares"] += t["shares"]; s["dates"].add(t["date"][:10])
                     if t["after"] is not None and t["date"][:10] >= s["after_date"]:
                         s["after"], s["after_date"] = t["after"], t["date"][:10]  # holdings after the latest sale
-        if n_forms == 0 and not rec["form"]:
-            return unavailable
-    except Exception:
-        return unavailable
+        if n_forms == 0 and form_errors:
+            return {**unavailable, "_error": "every Form 4 failed to load, e.g. " + form_errors[0]}
+    except Exception as e:
+        return {**unavailable, "_error": f"{type(e).__name__}: {e}"[:200]}
 
     n_buyers = len(buys)
     top_buy = any(b["role"] in ("CEO", "CFO", "President") and b["value"] >= 100_000 for b in buys.values())

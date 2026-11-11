@@ -32,7 +32,9 @@ GROUP_OF_SECTOR = {"Energy": "Energy", "Healthcare": "Healthcare", "Technology":
                    "Consumer Cyclical": "Consumer", "Basic Materials": "Materials", "Utilities": "Utilities",
                    "Real Estate": "Real estate", "Communication Services": "Communication"}
 
-TODAY = today_et()
+ASOF = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--asof=")), None)
+TODAY = dt.date.fromisoformat(ASOF) if ASOF else today_et()
+OUT = f"validation/asof-{ASOF}" if ASOF else "weekly"   # an as-of run never touches the live files
 errors = []
 
 
@@ -82,6 +84,9 @@ def main():
                     tracked.append(row["symbol"])
     candidates = sorted(set(sp500()))
     bars = download(set(candidates) | set(tracked) | set(MARKET))
+    if ASOF:  # rebuild the screen exactly as it would have looked at that day's close
+        cut = pd.Timestamp(ASOF)
+        bars = {s: d[d.index <= cut] for s, d in bars.items() if (d.index <= cut).any()}
     if "SPY" not in bars:
         raise SystemExit("no SPY data from Yahoo - stopping")
     asof = bars["SPY"].index[-1]
@@ -121,7 +126,7 @@ def main():
                          ma50=r2(c.tail(50).mean()), ma200=r2(c.tail(200).mean()),
                          r1m=ret_since(c, 1), r3m=ret_since(c, 3), r6m=ret_since(c, 6), r1y=ret_since(c, 12)))
     df = pd.DataFrame(rows)
-    df.drop(columns=["ysector"]).to_csv(path("weekly", str(TODAY), "data.csv"), index=False)
+    df.drop(columns=["ysector"]).to_csv(path(OUT, str(TODAY), "data.csv"), index=False)
 
     # ---- STEP 3: regime ---------------------------------------------------------------------
     def R(sym, months):
@@ -210,6 +215,8 @@ def main():
         dte = (nxt - TODAY).days if nxt else None
         atr = wilder_atr(bars[yahoo(s)])
         ins = insider_read(s, TODAY)
+        if "_error" in ins:
+            errors.append(f"{s} insiders: {ins.pop('_error')}")
         target = inf.get("targetMeanPrice")
         rec = inf.get("recommendationMean")
         extended = r.ext_50 > 12
@@ -244,14 +251,15 @@ def main():
               "passing": int(df.passes.sum()), "finalists": len(finalists), "regime_extra": regime_extra,
               "errors": errors, "ok": str(asof.date()) == str(TODAY) and len(universe) >= 80 and len(finalists) > 0}
 
-    out = os.path.join(DATA, "weekly", str(TODAY))
+    out = os.path.join(DATA, OUT, str(TODAY))
     for name, obj in [("screen.json", screen), ("regime.json", regime), ("sectors.json", sectors),
                       ("finalists.json", finalists), ("features.json", features), ("prices_all.json", prices_all),
                       ("status.json", status)]:
-        dump(obj, "weekly", str(TODAY), name)
-    latest = os.path.join(DATA, "weekly", "latest")
-    shutil.rmtree(latest, ignore_errors=True)
-    shutil.copytree(out, latest)
+        dump(obj, OUT, str(TODAY), name)
+    if not ASOF:
+        latest = os.path.join(DATA, "weekly", "latest")
+        shutil.rmtree(latest, ignore_errors=True)
+        shutil.copytree(out, latest)
     print(json.dumps(status, indent=1))
 
 
