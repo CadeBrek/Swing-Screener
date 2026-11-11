@@ -7,12 +7,21 @@
  "passing": 36,
  "finalists": 8,
  "regime_extra": {
-  "spy_1m": -2.38,
-  "spy_1y": 11.28,
-  "vix_1m_change": 19.07,
-  "wti_ytd": 52.0,
-  "spy_price": 760.01
+  "spy_1m": -2.32,
+  "spy_1y": 11.35,
+  "vix_1m_change": 19.0,
+  "wti_ytd": 51.5,
+  "spy_price": 760.53
  },
- "errors": [],
+ "errors": [
+  "TMO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "ABBV insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "AAPL insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "ANET insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "V insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "MA insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "MO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "KO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json"
+ ],
  "ok": true
 }
