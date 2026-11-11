@@ -1,1 +1,5 @@
 openbb>=4.4
+openbb-fixedincome
+openbb-economy
+openbb-federal-reserve
+openbb-fred
