@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['pipeline/research.py', 'data/run-research']
+    paths: ['data/run-research']
 
 permissions:
   contents: write
