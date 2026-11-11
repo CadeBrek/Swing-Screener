@@ -13,7 +13,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: data-commit
+  group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:
@@ -39,5 +39,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           mkdir -p reports && git add data reports
           git commit -m "Macro backdrop: $(TZ=America/New_York date +%F)" || exit 0
-          git pull --rebase
-          git push
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep $((i * 7)); done

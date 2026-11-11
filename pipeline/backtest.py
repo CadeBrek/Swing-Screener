@@ -53,7 +53,7 @@ def sp500():
 
 
 def sectors(symbols):
-    meta = load("meta.json", default={})
+    meta = {**load("meta.json", default={}), **load("backtest", "meta_cache.json", default={})}
     need = [s for s in symbols if s not in meta]
 
     def one(s):
@@ -66,7 +66,7 @@ def sectors(symbols):
         for s, m in ex.map(one, need):
             if m.get("sector"):
                 meta[s] = m
-    dump(meta, "meta.json")
+    dump(meta, "backtest", "meta_cache.json")   # its own cache: never collides with the weekly job
     return {s: meta.get(s, {}).get("sector") for s in symbols}
 
 
