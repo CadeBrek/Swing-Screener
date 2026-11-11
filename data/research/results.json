@@ -1,0 +1,285 @@
+{
+ "dividend_adjusted": false,
+ "membership_source": "fja05680/sp500 (S&P 500 Historical Components & Changes.csv)",
+ "coverage_pct": 84.8,
+ "window": [
+  "2014-12-12",
+  "2026-11-11"
+ ],
+ "in_sample_end": "2021-12-31",
+ "benchmarks": [
+  {
+   "name": "SPY buy & hold",
+   "in_sample": {
+    "cagr_pct": 12.99,
+    "vol_pct": 17.75,
+    "sharpe": 0.778,
+    "sortino": 0.894,
+    "max_dd_pct": -34.1,
+    "calmar": 0.381,
+    "beta": 1.0,
+    "alpha_pct": -0.0
+   },
+   "out_of_sample": {
+    "cagr_pct": 10.07,
+    "vol_pct": 17.4,
+    "sharpe": 0.638,
+    "sortino": 0.88,
+    "max_dd_pct": -25.36,
+    "calmar": 0.397,
+    "beta": 1.0,
+    "alpha_pct": 0.0
+   },
+   "full": {
+    "cagr_pct": 11.84,
+    "vol_pct": 17.6,
+    "sharpe": 0.724,
+    "sortino": 0.889,
+    "max_dd_pct": -34.1,
+    "calmar": 0.347,
+    "beta": 1.0,
+    "alpha_pct": -0.0
+   }
+  },
+  {
+   "name": "SPY with 200-day trend filter (monthly, BIL when off)",
+   "in_sample": {
+    "cagr_pct": 4.01,
+    "vol_pct": 16.17,
+    "sharpe": 0.324,
+    "sortino": 0.339,
+    "max_dd_pct": -38.92,
+    "calmar": 0.103,
+    "beta": 0.83,
+    "alpha_pct": -6.2
+   },
+   "out_of_sample": {
+    "cagr_pct": 2.39,
+    "vol_pct": 12.28,
+    "sharpe": 0.254,
+    "sortino": 0.306,
+    "max_dd_pct": -28.03,
+    "calmar": 0.085,
+    "beta": 0.5,
+    "alpha_pct": -2.4
+   },
+   "full": {
+    "cagr_pct": 3.39,
+    "vol_pct": 14.71,
+    "sharpe": 0.301,
+    "sortino": 0.324,
+    "max_dd_pct": -38.92,
+    "calmar": 0.087,
+    "beta": 0.7,
+    "alpha_pct": -4.46
+   }
+  }
+ ],
+ "v1_baseline": {
+  "name": "v1 as live (engine-style baseline)",
+  "in_sample": {
+   "cagr_pct": 9.88,
+   "vol_pct": 20.3,
+   "sharpe": 0.566,
+   "sortino": 0.701,
+   "max_dd_pct": -30.88,
+   "calmar": 0.32,
+   "beta": 0.97,
+   "alpha_pct": -1.83
+  },
+  "out_of_sample": {
+   "cagr_pct": 1.85,
+   "vol_pct": 18.19,
+   "sharpe": 0.192,
+   "sortino": 0.268,
+   "max_dd_pct": -25.42,
+   "calmar": 0.073,
+   "beta": 0.72,
+   "alpha_pct": -4.48
+  },
+  "full": {
+   "cagr_pct": 6.55,
+   "vol_pct": 19.47,
+   "sharpe": 0.424,
+   "sortino": 0.548,
+   "max_dd_pct": -30.88,
+   "calmar": 0.212,
+   "beta": 0.87,
+   "alpha_pct": -2.8
+  }
+ },
+ "chosen": [
+  {
+   "name": "A (engine-style) gate=90|top_n=4|cap=2|pullback=True|stop=none|regime=False",
+   "in_sample": {
+    "cagr_pct": 16.96,
+    "vol_pct": 21.99,
+    "sharpe": 0.823,
+    "sortino": 1.029,
+    "max_dd_pct": -32.42,
+    "calmar": 0.523,
+    "beta": 1.05,
+    "alpha_pct": 3.6
+   },
+   "out_of_sample": {
+    "cagr_pct": 11.22,
+    "vol_pct": 21.44,
+    "sharpe": 0.603,
+    "sortino": 0.879,
+    "max_dd_pct": -23.34,
+    "calmar": 0.481,
+    "beta": 0.88,
+    "alpha_pct": 3.15
+   },
+   "full": {
+    "cagr_pct": 14.68,
+    "vol_pct": 21.76,
+    "sharpe": 0.739,
+    "sortino": 0.979,
+    "max_dd_pct": -32.42,
+    "calmar": 0.453,
+    "beta": 0.98,
+    "alpha_pct": 3.54
+   }
+  },
+  {
+   "name": "B (rotation) universe=top100|n=20|weight=ivol|regime=False|buffer=True|freq=M",
+   "in_sample": {
+    "cagr_pct": 14.62,
+    "vol_pct": 20.46,
+    "sharpe": 0.77,
+    "sortino": 0.931,
+    "max_dd_pct": -33.51,
+    "calmar": 0.436,
+    "beta": 1.04,
+    "alpha_pct": 1.47
+   },
+   "out_of_sample": {
+    "cagr_pct": 14.71,
+    "vol_pct": 22.02,
+    "sharpe": 0.734,
+    "sortino": 1.013,
+    "max_dd_pct": -23.21,
+    "calmar": 0.634,
+    "beta": 0.96,
+    "alpha_pct": 5.52
+   },
+   "full": {
+    "cagr_pct": 14.71,
+    "vol_pct": 21.1,
+    "sharpe": 0.757,
+    "sortino": 0.964,
+    "max_dd_pct": -33.51,
+    "calmar": 0.439,
+    "beta": 1.0,
+    "alpha_pct": 3.16
+   }
+  }
+ ],
+ "chosen_params": {
+  "A": {
+   "gate": "90",
+   "top_n": "4",
+   "cap": "2",
+   "pullback": "True",
+   "stop": "none",
+   "regime": "False"
+  },
+  "B": {
+   "universe": "top100",
+   "n": "20",
+   "weight": "ivol",
+   "regime": "False",
+   "buffer": "True",
+   "freq": "M"
+  }
+ },
+ "is_oos_rank_corr_A": 0.025,
+ "top5_in_sample_A": [
+  {
+   "key": "A|gate=90|top_n=4|cap=2|pullback=True|stop=none|regime=False",
+   "is_sharpe": 0.823,
+   "robust_is_sharpe": 0.741,
+   "oos_sharpe": 0.603,
+   "oos_cagr_pct": 11.22,
+   "oos_max_dd_pct": -23.34
+  },
+  {
+   "key": "A|gate=80|top_n=4|cap=2|pullback=True|stop=none|regime=False",
+   "is_sharpe": 0.829,
+   "robust_is_sharpe": 0.741,
+   "oos_sharpe": 0.579,
+   "oos_cagr_pct": 10.92,
+   "oos_max_dd_pct": -28.67
+  },
+  {
+   "key": "A|gate=60|top_n=4|cap=2|pullback=False|stop=wide 4/4.5|regime=False",
+   "is_sharpe": 0.839,
+   "robust_is_sharpe": 0.708,
+   "oos_sharpe": 0.433,
+   "oos_cagr_pct": 7.33,
+   "oos_max_dd_pct": -22.72
+  },
+  {
+   "key": "A|gate=90|top_n=4|cap=2|pullback=True|stop=wide 4/4.5|regime=False",
+   "is_sharpe": 0.744,
+   "robust_is_sharpe": 0.708,
+   "oos_sharpe": 0.571,
+   "oos_cagr_pct": 9.94,
+   "oos_max_dd_pct": -23.41
+  },
+  {
+   "key": "A|gate=80|top_n=4|cap=2|pullback=False|stop=wide 4/4.5|regime=False",
+   "is_sharpe": 0.731,
+   "robust_is_sharpe": 0.708,
+   "oos_sharpe": 0.454,
+   "oos_cagr_pct": 8.01,
+   "oos_max_dd_pct": -24.81
+  }
+ ],
+ "share_beating_spy_oos_A": 9.7,
+ "is_oos_rank_corr_B": 0.416,
+ "top5_in_sample_B": [
+  {
+   "key": "B|universe=top100|n=20|weight=ivol|regime=False|buffer=True|freq=M",
+   "is_sharpe": 0.77,
+   "robust_is_sharpe": 0.6995,
+   "oos_sharpe": 0.734,
+   "oos_cagr_pct": 14.71,
+   "oos_max_dd_pct": -23.21
+  },
+  {
+   "key": "B|universe=top100|n=20|weight=ivol|regime=False|buffer=False|freq=M",
+   "is_sharpe": 0.795,
+   "robust_is_sharpe": 0.6890000000000001,
+   "oos_sharpe": 0.507,
+   "oos_cagr_pct": 8.84,
+   "oos_max_dd_pct": -23.68
+  },
+  {
+   "key": "B|universe=top100|n=20|weight=ivol|regime=False|buffer=True|freq=W",
+   "is_sharpe": 0.716,
+   "robust_is_sharpe": 0.6855,
+   "oos_sharpe": 0.593,
+   "oos_cagr_pct": 10.73,
+   "oos_max_dd_pct": -24.4
+  },
+  {
+   "key": "B|universe=top100|n=10|weight=ivol|regime=False|buffer=True|freq=M",
+   "is_sharpe": 0.648,
+   "robust_is_sharpe": 0.681,
+   "oos_sharpe": 0.677,
+   "oos_cagr_pct": 16.56,
+   "oos_max_dd_pct": -30.63
+  },
+  {
+   "key": "B|universe=all|n=10|weight=ivol|regime=False|buffer=True|freq=W",
+   "is_sharpe": 0.792,
+   "robust_is_sharpe": 0.6765000000000001,
+   "oos_sharpe": 0.599,
+   "oos_cagr_pct": 14.18,
+   "oos_max_dd_pct": -29.3
+  }
+ ],
+ "share_beating_spy_oos_B": 25.0
+}

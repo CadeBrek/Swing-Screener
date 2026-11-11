@@ -1,0 +1,670 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BIG"}}}
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BMC-201309"}}}
+$BMC-201309: No data found, symbol may be delisted
+$BIG: No data found, symbol may be delisted
+$ABMD: No data found, symbol may be delisted
+$ALXN: No data found, symbol may be delisted
+$AVP: No data found, symbol may be delisted
+$BHGE: No data found, symbol may be delisted
+$BRCM-201601: No data found, symbol may be delisted
+$ANSS: No data found, symbol may be delisted
+$BLL: No data found, symbol may be delisted
+$BK: possibly delisted; no price data found  (period=13y)
+$ANDV: No data found, symbol may be delisted
+$ARG-201605: No data found, symbol may be delisted
+$ADS: No data found, symbol may be delisted
+$AET-201811: No data found, symbol may be delisted
+$BTUUQ-201704: No data found, symbol may be delisted
+$ALTR-201512: No data found, symbol may be delisted
+$ADT-201604: No data found, symbol may be delisted
+$ATVI: No data found, symbol may be delisted
+$AGN: No data found, symbol may be delisted
+$AABA: No data found, symbol may be delisted
+$ARNC: No data found, symbol may be delisted
+$APOL-201702: No data found, symbol may be delisted
+$ANDV-201809: No data found, symbol may be delisted
+$BCR-201712: No data found, symbol may be delisted
+$BEAM-201404: No data found, symbol may be delisted
+$AGN-201503: No data found, symbol may be delisted
+$BMS: No data found, symbol may be delisted
+$AET: No data found, symbol may be delisted
+
+28 Failed downloads:
+['BMC-201309', 'BIG', 'ABMD', 'ALXN', 'AVP', 'BHGE', 'BRCM-201601', 'ANSS', 'BLL', 'ANDV', 'ARG-201605', 'ADS', 'AET-201811', 'BTUUQ-201704', 'ALTR-201512', 'ADT-201604', 'ATVI', 'AGN', 'AABA', 'ARNC', 'APOL-201702', 'ANDV-201809', 'BCR-201712', 'BEAM-201404', 'AGN-201503', 'BMS', 'AET']: No data found, symbol may be delisted
+['BK']: possibly delisted; no price data found  (period=13y)
+$CAM-201604: No data found, symbol may be delisted
+$CXO: No data found, symbol may be delisted
+$CPGX-201606: No data found, symbol may be delisted
+$BXLT-201606: No data found, symbol may be delisted
+$CA: possibly delisted; no price data found  (period=13y)
+$DISCK: No data found, symbol may be delisted
+$DNB: No data found, symbol may be delisted
+$DRE: No data found, symbol may be delisted
+$DF: No data found, symbol may be delisted
+$CMA: possibly delisted; no price data found  (period=13y)
+$DD-201708: No data found, symbol may be delisted
+$COV-201501: No data found, symbol may be delisted
+$CFN-201503: No data found, symbol may be delisted
+$DISH: No data found, symbol may be delisted
+$CVC-201606: No data found, symbol may be delisted
+$CCE: No data found, symbol may be delisted
+$CERN: No data found, symbol may be delisted
+$CSRA-201804: No data found, symbol may be delisted
+$CTXS: No data found, symbol may be delisted
+$CTRA: possibly delisted; no price data found  (period=13y)
+$CTL: No data found, symbol may be delisted
+$CELG: No data found, symbol may be delisted
+$DOW-201708: No data found, symbol may be delisted
+$DNR: No data found, symbol may be delisted
+$CBE-201211: No data found, symbol may be delisted
+$CMCSK-201512: No data found, symbol may be delisted
+$DFS: No data found, symbol may be delisted
+$DO: No data found, symbol may be delisted
+$COL: No data found, symbol may be delisted
+$CB-201601: No data found, symbol may be delisted
+$COL-201811: No data found, symbol may be delisted
+$CHK: No data found, symbol may be delisted
+$DELL-201310: No data found, symbol may be delisted
+$CA-201811: No data found, symbol may be delisted
+$DTV-201507: No data found, symbol may be delisted
+$CVH-201305: No data found, symbol may be delisted
+
+36 Failed downloads:
+['CAM-201604', 'CXO', 'CPGX-201606', 'BXLT-201606', 'DISCK', 'DNB', 'DRE', 'DF', 'DD-201708', 'COV-201501', 'CFN-201503', 'DISH', 'CVC-201606', 'CCE', 'CERN', 'CSRA-201804', 'CTXS', 'CTL', 'CELG', 'DOW-201708', 'DNR', 'CBE-201211', 'CMCSK-201512', 'DFS', 'DO', 'COL', 'CB-201601', 'COL-201811', 'CHK', 'DELL-201310', 'CA-201811', 'DTV-201507', 'CVH-201305']: No data found, symbol may be delisted
+['CA', 'CMA', 'CTRA']: possibly delisted; no price data found  (period=13y)
+$FRC: No data found, symbol may be delisted
+$DWDP: No data found, symbol may be delisted
+$EMC-201609: No data found, symbol may be delisted
+$HAR-201703: No data found, symbol may be delisted
+$FI: possibly delisted; no price data found  (period=13y)
+$FTR: No data found, symbol may be delisted
+$EVHC-201810: No data found, symbol may be delisted
+$ETFC: No data found, symbol may be delisted
+$FL: No data found, symbol may be delisted
+$GAS-201606: No data found, symbol may be delisted
+$ENDP: No data found, symbol may be delisted
+$HES: No data found, symbol may be delisted
+$EVHC: No data found, symbol may be delisted
+$FLIR: No data found, symbol may be delisted
+$ESRX-201812: No data found, symbol may be delisted
+$GMCR-201603: No data found, symbol may be delisted
+$GGP-201808: No data found, symbol may be delisted
+$GPS: No data found, symbol may be delisted
+$HCP: No data found, symbol may be delisted
+$FBHS: No data found, symbol may be delisted
+$GGP: No data found, symbol may be delisted
+$FDO-201507: No data found, symbol may be delisted
+$HBI: possibly delisted; no price data found  (period=13y)
+$FII: No data found, symbol may be delisted
+$HCBK-201510: No data found, symbol may be delisted
+$FRX-201406: No data found, symbol may be delisted
+$FTI-201701: No data found, symbol may be delisted
+$ESV: No data found, symbol may be delisted
+$ESRX: No data found, symbol may be delisted
+
+29 Failed downloads:
+['FRC', 'DWDP', 'EMC-201609', 'HAR-201703', 'FTR', 'EVHC-201810', 'ETFC', 'FL', 'GAS-201606', 'ENDP', 'HES', 'EVHC', 'FLIR', 'ESRX-201812', 'GMCR-201603', 'GGP-201808', 'GPS', 'HCP', 'FBHS', 'GGP', 'FDO-201507', 'FII', 'HCBK-201510', 'FRX-201406', 'FTI-201701', 'ESV', 'ESRX']: No data found, symbol may be delisted
+['FI', 'HBI']: possibly delisted; no price data found  (period=13y)
+$IGT-201504: No data found, symbol may be delisted
+$LVLT-201710: No data found, symbol may be delisted
+$KRFT-201507: No data found, symbol may be delisted
+$HSP-201509: No data found, symbol may be delisted
+$LLTC-201703: No data found, symbol may be delisted
+$LSI-201405: No data found, symbol may be delisted
+$LM: No data found, symbol may be delisted
+$HOLX: No data found, symbol may be delisted
+$HRS: No data found, symbol may be delisted
+$JEC: No data found, symbol may be delisted
+$HOT-201609: No data found, symbol may be delisted
+$LO-201506: No data found, symbol may be delisted
+Failed to get ticker 'JWN' reason: Failed to perform, curl: (28) Operation timed out after 10001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+$JWN: No data found, symbol may be delisted
+$JCI-201609: No data found, symbol may be delisted
+$K: possibly delisted; no price data found  (period=13y)
+$LLL: No data found, symbol may be delisted
+$IPG: possibly delisted; no price data found  (period=13y)
+$HNZ-201306: No data found, symbol may be delisted
+$JNPR: No data found, symbol may be delisted
+$JCP: No data found, symbol may be delisted
+$KSU: No data found, symbol may be delisted
+$LIFE-201402: No data found, symbol may be delisted
+$JOY-201704: No data found, symbol may be delisted
+
+23 Failed downloads:
+['IGT-201504', 'LVLT-201710', 'KRFT-201507', 'HSP-201509', 'LLTC-201703', 'LSI-201405', 'LM', 'HOLX', 'HRS', 'JEC', 'HOT-201609', 'LO-201506', 'JWN', 'JCI-201609', 'LLL', 'HNZ-201306', 'JNPR', 'JCP', 'KSU', 'LIFE-201402', 'JOY-201704']: No data found, symbol may be delisted
+['K', 'IPG']: possibly delisted; no price data found  (period=13y)
+$POM-201603: No data found, symbol may be delisted
+$MRO: No data found, symbol may be delisted
+$MJN-201706: No data found, symbol may be delisted
+$NLSN: No data found, symbol may be delisted
+$MWV-201507: No data found, symbol may be delisted
+$MXIM: No data found, symbol may be delisted
+$PXD: No data found, symbol may be delisted
+$MON-201806: No data found, symbol may be delisted
+$PETM-201503: No data found, symbol may be delisted
+$NYX-201311: No data found, symbol may be delisted
+$PCL-201602: No data found, symbol may be delisted
+$PDCO: No data found, symbol may be delisted
+$PCP-201601: No data found, symbol may be delisted
+$PX: No data found, symbol may be delisted
+$MNK: No data found, symbol may be delisted
+$PBCT: No data found, symbol may be delisted
+$PX-201810: No data found, symbol may be delisted
+$PLL-201508: No data found, symbol may be delisted
+$NBL: No data found, symbol may be delisted
+$MOLX-201312: No data found, symbol may be delisted
+$MYL: No data found, symbol may be delisted
+$MMC: No data found, symbol may be delisted
+
+22 Failed downloads:
+['POM-201603', 'MRO', 'MJN-201706', 'NLSN', 'MWV-201507', 'MXIM', 'PXD', 'MON-201806', 'PETM-201503', 'NYX-201311', 'PCL-201602', 'PDCO', 'PCP-201601', 'PX', 'MNK', 'PBCT', 'PX-201810', 'PLL-201508', 'NBL', 'MOLX-201312', 'MYL', 'MMC']: No data found, symbol may be delisted
+$TWTR: No data found, symbol may be delisted
+$RHT: No data found, symbol may be delisted
+$SCG-201812: No data found, symbol may be delisted
+$RE: No data found, symbol may be delisted
+$RDC: No data found, symbol may be delisted
+$SNI-201803: No data found, symbol may be delisted
+$SCG: No data found, symbol may be delisted
+$RRD: No data found, symbol may be delisted
+$TEG-201506: No data found, symbol may be delisted
+$TE-201606: No data found, symbol may be delisted
+$SIVB: No data found, symbol may be delisted
+$STJ-201701: No data found, symbol may be delisted
+$SIAL-201511: No data found, symbol may be delisted
+$SWY-201501: No data found, symbol may be delisted
+$QEP: No data found, symbol may be delisted
+$SPLS-201709: No data found, symbol may be delisted
+$TGNA: possibly delisted; no price data found  (period=13y)
+$TSS: No data found, symbol may be delisted
+$TWC-201605: No data found, symbol may be delisted
+$SEE: possibly delisted; no price data found  (period=13y)
+$SE-201702: No data found, symbol may be delisted
+$TWX-201806: No data found, symbol may be delisted
+$TIE-201301: No data found, symbol may be delisted
+$SRCL: No data found, symbol may be delisted
+$RAI-201707: No data found, symbol may be delisted
+$SNDK-201605: No data found, symbol may be delisted
+$SWN: No data found, symbol may be delisted
+$TIF: No data found, symbol may be delisted
+
+28 Failed downloads:
+['TWTR', 'RHT', 'SCG-201812', 'RE', 'RDC', 'SNI-201803', 'SCG', 'RRD', 'TEG-201506', 'TE-201606', 'SIVB', 'STJ-201701', 'SIAL-201511', 'SWY-201501', 'QEP', 'SPLS-201709', 'TSS', 'TWC-201605', 'SE-201702', 'TWX-201806', 'TIE-201301', 'SRCL', 'RAI-201707', 'SNDK-201605', 'SWN', 'TIF']: No data found, symbol may be delisted
+['TGNA', 'SEE']: possibly delisted; no price data found  (period=13y)
+$WIN: No data found, symbol may be delisted
+$XL-201809: No data found, symbol may be delisted
+$XLNX: No data found, symbol may be delisted
+$XEC: No data found, symbol may be delisted
+$VAR: No data found, symbol may be delisted
+$XL: No data found, symbol may be delisted
+$WCG: No data found, symbol may be delisted
+$WBA: No data found, symbol may be delisted
+$WYND: No data found, symbol may be delisted
+$X: No data found, symbol may be delisted
+$WPX: No data found, symbol may be delisted
+$VIAB: No data found, symbol may be delisted
+$WRK: No data found, symbol may be delisted
+$WFM-201708: No data found, symbol may be delisted
+
+14 Failed downloads:
+['WIN', 'XL-201809', 'XLNX', 'XEC', 'VAR', 'XL', 'WCG', 'WBA', 'WYND', 'X', 'WPX', 'VIAB', 'WRK', 'WFM-201708']: No data found, symbol may be delisted
+[   115s] membership: fja05680/sp500 (S&P 500 Historical Components & Changes.csv); 654 tickers in the index during the window, 474 with prices
+[   115s] 623 weeks, 144 months, test window 2014-12-12 .. 2026-11-09
+[   160s] scored every week; average share of index members with price data: 85%
+[   609s] family A: 144 engine-style variants
+[   751s] family B: 96 rotation variants
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/quantstats/_plotting/core.py:266: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(df.index.year)
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/site-packages/quantstats/_plotting/core.py:266: UserWarning: set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator. Otherwise, ticks may be mislabeled.
+  ax.set_xticklabels(df.index.year)
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+findfont: Font family 'Arial' not found.
+[   762s] done
+{
+ "benchmarks": [
+  {
+   "name": "SPY buy & hold",
+   "in_sample": {
+    "cagr_pct": 12.99,
+    "vol_pct": 17.75,
+    "sharpe": 0.778,
+    "sortino": 0.894,
+    "max_dd_pct": -34.1,
+    "calmar": 0.381,
+    "beta": 1.0,
+    "alpha_pct": -0.0
+   },
+   "out_of_sample": {
+    "cagr_pct": 10.07,
+    "vol_pct": 17.4,
+    "sharpe": 0.638,
+    "sortino": 0.88,
+    "max_dd_pct": -25.36,
+    "calmar": 0.397,
+    "beta": 1.0,
+    "alpha_pct": 0.0
+   },
+   "full": {
+    "cagr_pct": 11.84,
+    "vol_pct": 17.6,
+    "sharpe": 0.724,
+    "sortino": 0.889,
+    "max_dd_pct": -34.1,
+    "calmar": 0.347,
+    "beta": 1.0,
+    "alpha_pct": -0.0
+   }
+  },
+  {
+   "name": "SPY with 200-day trend filter (monthly, BIL when off)",
+   "in_sample": {
+    "cagr_pct": 4.01,
+    "vol_pct": 16.17,
+    "sharpe": 0.324,
+    "sortino": 0.339,
+    "max_dd_pct": -38.92,
+    "calmar": 0.103,
+    "beta": 0.83,
+    "alpha_pct": -6.2
+   },
+   "out_of_sample": {
+    "cagr_pct": 2.39,
+    "vol_pct": 12.28,
+    "sharpe": 0.254,
+    "sortino": 0.306,
+    "max_dd_pct": -28.03,
+    "calmar": 0.085,
+    "beta": 0.5,
+    "alpha_pct": -2.4
+   },
+   "full": {
+    "cagr_pct": 3.39,
+    "vol_pct": 14.71,
+    "sharpe": 0.301,
+    "sortino": 0.324,
+    "max_dd_pct": -38.92,
+    "calmar": 0.087,
+    "beta": 0.7,
+    "alpha_pct": -4.46
+   }
+  }
+ ],
+ "v1_baseline": {
+  "name": "v1 as live (engine-style baseline)",
+  "in_sample": {
+   "cagr_pct": 9.88,
+   "vol_pct": 20.3,
+   "sharpe": 0.566,
+   "sortino": 0.701,
+   "max_dd_pct": -30.88,
+   "calmar": 0.32,
+   "beta": 0.97,
+   "alpha_pct": -1.83
+  },
+  "out_of_sample": {
+   "cagr_pct": 1.85,
+   "vol_pct": 18.19,
+   "sharpe": 0.192,
+   "sortino": 0.268,
+   "max_dd_pct": -25.42,
+   "calmar": 0.073,
+   "beta": 0.72,
+   "alpha_pct": -4.48
+  },
+  "full": {
+   "cagr_pct": 6.55,
+   "vol_pct": 19.47,
+   "sharpe": 0.424,
+   "sortino": 0.548,
+   "max_dd_pct": -30.88,
+   "calmar": 0.212,
+   "beta": 0.87,
+   "alpha_pct": -2.8
+  }
+ },
+ "chosen": [
+  {
+   "name": "A (engine-style) gate=90|top_n=4|cap=2|pullback=True|stop=none|regime=False",
+   "in_sample": {
+    "cagr_pct": 16.96,
+    "vol_pct": 21.99,
+    "sharpe": 0.823,
+    "sortino": 1.029,
+    "max_dd_pct": -32.42,
+    "calmar": 0.523,
+    "beta": 1.05,
+    "alpha_pct": 3.6
+   },
+   "out_of_sample": {
+    "cagr_pct": 11.22,
+    "vol_pct": 21.44,
+    "sharpe": 0.603,
+    "sortino": 0.879,
+    "max_dd_pct": -23.34,
+    "calmar": 0.481,
+    "beta": 0.88,
+    "alpha_pct": 3.15
+   },
+   "full": {
+    "cagr_pct": 14.68,
+    "vol_pct": 21.76,
+    "sharpe": 0.739,
+    "sortino": 0.979,
+    "max_dd_pct": -32.42,
+    "calmar": 0.453,
+    "beta": 0.98,
+    "alpha_pct": 3.54
+   }
+  },
+  {
+   "name": "B (rotation) universe=top100|n=20|weight=ivol|regime=False|buffer=True|freq=M",
+   "in_sample": {
+    "cagr_pct": 14.62,
+    "vol_pct": 20.46,
+    "sharpe": 0.77,
+    "sortino": 0.931,
+    "max_dd_pct": -33.51,
+    "calmar": 0.436,
+    "beta": 1.04,
+    "alpha_pct": 1.47
+   },
+   "out_of_sample": {
+    "cagr_pct": 14.71,
+    "vol_pct": 22.02,
+    "sharpe": 0.734,
+    "sortino": 1.013,
+    "max_dd_pct": -23.21,
+    "calmar": 0.634,
+    "beta": 0.96,
+    "alpha_pct": 5.52
+   },
+   "full": {
+    "cagr_pct": 14.71,
+    "vol_pct": 21.1,
+    "sharpe": 0.757,
+    "sortino": 0.964,
+    "max_dd_pct": -33.51,
+    "calmar": 0.439,
+    "beta": 1.0,
+    "alpha_pct": 3.16
+   }
+  }
+ ],
+ "chosen_params": {
+  "A": {
+   "gate": "90",
+   "top_n": "4",
+   "cap": "2",
+   "pullback": "True",
+   "stop": "none",
+   "regime": "False"
+  },
+  "B": {
+   "universe": "top100",
+   "n": "20",
+   "weight": "ivol",
+   "regime": "False",
+   "buffer": "True",
+   "freq": "M"
+  }
+ }
+}
