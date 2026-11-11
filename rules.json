@@ -6,5 +6,16 @@
       "since": "2026-10-20",
       "version": "v1"
     }
+  ],
+  "data_changelog": [
+    {
+      "since": "2026-10-20",
+      "source": "Bigdata.com (prices, universe, earnings, targets, news) + Alpha Vantage (ATR, Form 4)"
+    },
+    {
+      "since": "2026-11-16",
+      "source": "Yahoo Finance via yfinance (prices, universe = top 100 S&P 500 by market cap over $10B, earnings, targets) + SEC EDGAR (Form 4) on GitHub Actions; news via Claude web search",
+      "validation": "Nov 2 screen rebuilt from Yahoo: prices/ATR/stops identical to Bigdata within cents, trend and pass/fail 90/90, strength rank within 5 for 88/90, 7 of 8 finalists the same (MPC dropped: not in the Yahoo top-100 universe)"
+    }
   ]
 }

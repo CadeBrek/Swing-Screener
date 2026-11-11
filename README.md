@@ -4,6 +4,18 @@ A weekly momentum screen for 1–6 month swing trades, a $50k paper portfolio th
 
 Built and run with Claude. The code here is the source of truth for the rules; the live dashboards read and write the data.
 
+## Where the data comes from
+
+GitHub Actions run the free-data scripts in `pipeline/` on GitHub's servers, so they use no Claude or connector credits:
+
+| Job | When (ET) | Script | Writes |
+|---|---|---|---|
+| Daily prices | weekdays ~4:40 pm | `pipeline/daily.py` | `data/daily/latest/` (closing prices, earnings dates) |
+| Weekly screen data | Mondays ~4:45 pm | `pipeline/weekly.py` | `data/weekly/<date>/` and `latest/` (universe, scores, finalists, ATR stops, insider flags) |
+| Validation | on demand | `pipeline/weekly.py --asof=<date>` | `data/validation/` (rebuild an old screen to compare sources) |
+
+Sources: Yahoo Finance (via `yfinance`) and SEC EDGAR. Claude's scheduled tasks then read those files, write the news summaries, run the engines and update the dashboards. To re-run a job by hand, add a line to `data/run-daily`, `data/run-weekly` or `data/run-validate` and push.
+
 ## How it fits together
 
 ```
