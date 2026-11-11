@@ -4,14 +4,14 @@
  "rules_version": "v1",
  "source": "Yahoo Finance (yfinance) + SEC EDGAR",
  "universe": 100,
- "passing": 36,
+ "passing": 35,
  "finalists": 8,
  "regime_extra": {
-  "spy_1m": -2.35,
-  "spy_1y": 11.32,
-  "vix_1m_change": 17.39,
-  "wti_ytd": 50.3,
-  "spy_price": 760.28
+  "spy_1m": -2.41,
+  "spy_1y": 11.25,
+  "vix_1m_change": 17.86,
+  "wti_ytd": 50.6,
+  "spy_price": 759.81
  },
  "errors": [
   "TMO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
