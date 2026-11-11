@@ -1,44 +1,44 @@
 [     0s] S&P 500 list: 500
-[    66s] price history for 500 stocks
-[    67s] 570 weekly screens from 2015-12-14 to 2026-11-09
-[    78s] weekly screens scored
-[    79s] forward study done
-[   100s] gate 50 stop 2.0 cut 8: 9.1%/yr, maxDD -36.9%, trades 650
-[   102s] gate 50 stop 2.0 cut 12: 8.9%/yr, maxDD -30.9%, trades 672
-[   104s] gate 50 stop 2.0 cut 15: 7.3%/yr, maxDD -31.8%, trades 685
-[   106s] gate 50 stop 2.5 cut 8: 6.2%/yr, maxDD -36.1%, trades 690
-[   108s] gate 50 stop 2.5 cut 12: 8.4%/yr, maxDD -32.4%, trades 694
-[   110s] gate 50 stop 2.5 cut 15: 8.2%/yr, maxDD -32.6%, trades 713
-[   112s] gate 50 stop 3.0 cut 8: 6.8%/yr, maxDD -35.3%, trades 728
-[   114s] gate 50 stop 3.0 cut 12: 8.4%/yr, maxDD -33.2%, trades 738
-[   116s] gate 50 stop 3.0 cut 15: 6.9%/yr, maxDD -32.9%, trades 775
-[   118s] gate 60 stop 2.0 cut 8: 9.4%/yr, maxDD -35.7%, trades 684
-[   120s] gate 60 stop 2.0 cut 12: 10.4%/yr, maxDD -31.0%, trades 681
-[   121s] gate 60 stop 2.0 cut 15: 8.0%/yr, maxDD -31.0%, trades 696
-[   123s] gate 60 stop 2.5 cut 8: 8.1%/yr, maxDD -35.5%, trades 711
-[   126s] gate 60 stop 2.5 cut 12: 8.9%/yr, maxDD -32.4%, trades 724
-[   128s] gate 60 stop 2.5 cut 15: 7.4%/yr, maxDD -32.3%, trades 738
-[   130s] gate 60 stop 3.0 cut 8: 8.4%/yr, maxDD -33.1%, trades 746
-[   132s] gate 60 stop 3.0 cut 12: 9.2%/yr, maxDD -33.0%, trades 765
-[   133s] gate 60 stop 3.0 cut 15: 6.4%/yr, maxDD -33.5%, trades 787
-[   135s] gate 70 stop 2.0 cut 8: 8.2%/yr, maxDD -39.8%, trades 749
-[   137s] gate 70 stop 2.0 cut 12: 8.5%/yr, maxDD -40.6%, trades 774
-[   140s] gate 70 stop 2.0 cut 15: 5.1%/yr, maxDD -40.2%, trades 795
-[   142s] gate 70 stop 2.5 cut 8: 7.8%/yr, maxDD -36.7%, trades 785
-[   144s] gate 70 stop 2.5 cut 12: 10.5%/yr, maxDD -32.4%, trades 805
-[   146s] gate 70 stop 2.5 cut 15: 8.4%/yr, maxDD -32.9%, trades 826
-[   148s] gate 70 stop 3.0 cut 8: 9.1%/yr, maxDD -31.0%, trades 828
-[   150s] gate 70 stop 3.0 cut 12: 10.4%/yr, maxDD -33.5%, trades 837
-[   151s] gate 70 stop 3.0 cut 15: 7.3%/yr, maxDD -33.6%, trades 869
-[   153s] gate 80 stop 2.0 cut 8: 11.5%/yr, maxDD -31.1%, trades 871
-[   156s] gate 80 stop 2.0 cut 12: 11.6%/yr, maxDD -36.8%, trades 896
-[   158s] gate 80 stop 2.0 cut 15: 11.5%/yr, maxDD -36.1%, trades 907
-[   160s] gate 80 stop 2.5 cut 8: 12.0%/yr, maxDD -31.3%, trades 896
-[   162s] gate 80 stop 2.5 cut 12: 10.2%/yr, maxDD -32.9%, trades 943
-[   164s] gate 80 stop 2.5 cut 15: 9.3%/yr, maxDD -35.8%, trades 959
-[   166s] gate 80 stop 3.0 cut 8: 12.9%/yr, maxDD -32.3%, trades 937
-[   168s] gate 80 stop 3.0 cut 12: 10.9%/yr, maxDD -33.8%, trades 983
-[   170s] gate 80 stop 3.0 cut 15: 8.9%/yr, maxDD -35.9%, trades 1026
+[    56s] price history for 500 stocks
+[    57s] 570 weekly screens from 2015-12-14 to 2026-11-09
+[    63s] weekly screens scored
+[    63s] forward study done
+[    81s] gate 50 stop 2.0 cut 8: 9.1%/yr, maxDD -36.9%, trades 650
+[    82s] gate 50 stop 2.0 cut 12: 8.9%/yr, maxDD -30.9%, trades 672
+[    83s] gate 50 stop 2.0 cut 15: 7.3%/yr, maxDD -31.8%, trades 685
+[    85s] gate 50 stop 2.5 cut 8: 6.2%/yr, maxDD -36.1%, trades 690
+[    86s] gate 50 stop 2.5 cut 12: 8.4%/yr, maxDD -32.4%, trades 694
+[    87s] gate 50 stop 2.5 cut 15: 8.2%/yr, maxDD -32.6%, trades 713
+[    89s] gate 50 stop 3.0 cut 8: 6.8%/yr, maxDD -35.3%, trades 728
+[    90s] gate 50 stop 3.0 cut 12: 8.4%/yr, maxDD -33.2%, trades 738
+[    92s] gate 50 stop 3.0 cut 15: 6.9%/yr, maxDD -32.9%, trades 775
+[    93s] gate 60 stop 2.0 cut 8: 9.4%/yr, maxDD -35.7%, trades 684
+[    94s] gate 60 stop 2.0 cut 12: 10.4%/yr, maxDD -31.0%, trades 681
+[    95s] gate 60 stop 2.0 cut 15: 8.0%/yr, maxDD -31.0%, trades 696
+[    97s] gate 60 stop 2.5 cut 8: 8.1%/yr, maxDD -35.5%, trades 711
+[    99s] gate 60 stop 2.5 cut 12: 8.9%/yr, maxDD -32.4%, trades 724
+[   100s] gate 60 stop 2.5 cut 15: 7.4%/yr, maxDD -32.3%, trades 738
+[   101s] gate 60 stop 3.0 cut 8: 8.4%/yr, maxDD -33.1%, trades 746
+[   103s] gate 60 stop 3.0 cut 12: 9.2%/yr, maxDD -33.0%, trades 765
+[   104s] gate 60 stop 3.0 cut 15: 6.4%/yr, maxDD -33.5%, trades 787
+[   105s] gate 70 stop 2.0 cut 8: 8.2%/yr, maxDD -39.8%, trades 749
+[   107s] gate 70 stop 2.0 cut 12: 8.5%/yr, maxDD -40.6%, trades 774
+[   108s] gate 70 stop 2.0 cut 15: 5.1%/yr, maxDD -40.2%, trades 795
+[   110s] gate 70 stop 2.5 cut 8: 7.8%/yr, maxDD -36.7%, trades 785
+[   111s] gate 70 stop 2.5 cut 12: 10.5%/yr, maxDD -32.4%, trades 805
+[   112s] gate 70 stop 2.5 cut 15: 8.4%/yr, maxDD -32.9%, trades 826
+[   114s] gate 70 stop 3.0 cut 8: 9.1%/yr, maxDD -31.0%, trades 828
+[   115s] gate 70 stop 3.0 cut 12: 10.4%/yr, maxDD -33.5%, trades 837
+[   116s] gate 70 stop 3.0 cut 15: 7.3%/yr, maxDD -33.6%, trades 869
+[   118s] gate 80 stop 2.0 cut 8: 11.5%/yr, maxDD -31.1%, trades 871
+[   119s] gate 80 stop 2.0 cut 12: 11.6%/yr, maxDD -36.8%, trades 896
+[   121s] gate 80 stop 2.0 cut 15: 11.5%/yr, maxDD -36.1%, trades 907
+[   122s] gate 80 stop 2.5 cut 8: 12.0%/yr, maxDD -31.3%, trades 896
+[   123s] gate 80 stop 2.5 cut 12: 10.2%/yr, maxDD -32.9%, trades 943
+[   125s] gate 80 stop 2.5 cut 15: 9.3%/yr, maxDD -35.8%, trades 959
+[   126s] gate 80 stop 3.0 cut 8: 12.9%/yr, maxDD -32.3%, trades 937
+[   127s] gate 80 stop 3.0 cut 12: 10.9%/yr, maxDD -33.8%, trades 983
+[   129s] gate 80 stop 3.0 cut 15: 8.9%/yr, maxDD -35.9%, trades 1026
 findfont: Font family 'Arial' not found.
 findfont: Font family 'Arial' not found.
 findfont: Font family 'Arial' not found.
@@ -172,7 +172,7 @@ findfont: Font family 'Arial' not found.
 findfont: Font family 'Arial' not found.
 findfont: Font family 'Arial' not found.
 findfont: Font family 'Arial' not found.
-[   174s] done
+[   132s] done
 {
  "window": [
   "2015-12-14",
