@@ -1,0 +1,66 @@
+[
+ {
+  "symbol": "CRWD",
+  "strike": 240,
+  "expiry": "2027-02-19",
+  "iv": 0.5543,
+  "contracts": 0.23,
+  "opened": "2026-10-26"
+ },
+ {
+  "symbol": "TMO",
+  "strike": 640,
+  "expiry": "2027-02-19",
+  "iv": 0.3319,
+  "contracts": 0.14,
+  "opened": "2026-10-26"
+ },
+ {
+  "symbol": "MRK",
+  "strike": 140,
+  "expiry": "2027-02-19",
+  "iv": 0.3461,
+  "contracts": 0.63,
+  "opened": "2026-11-02"
+ },
+ {
+  "symbol": "DE",
+  "strike": 630,
+  "expiry": "2027-02-19",
+  "iv": 0.3213,
+  "contracts": 0.15,
+  "opened": "2026-11-02"
+ },
+ {
+  "symbol": "XOM",
+  "strike": 170,
+  "expiry": "2027-02-19",
+  "iv": 0.268,
+  "contracts": 0.65,
+  "opened": "2026-11-02"
+ },
+ {
+  "symbol": "ADI",
+  "strike": 380,
+  "expiry": "2027-02-19",
+  "iv": 0.4096,
+  "contracts": 0.19,
+  "opened": "2026-11-02"
+ },
+ {
+  "symbol": "PM",
+  "strike": 195,
+  "expiry": "2027-02-19",
+  "iv": 0.281,
+  "contracts": 0.38,
+  "opened": "2026-11-02"
+ },
+ {
+  "symbol": "AAPL",
+  "strike": 330,
+  "expiry": "2027-02-19",
+  "iv": 0.2292,
+  "contracts": 0.2,
+  "opened": "2026-11-04"
+ }
+]
