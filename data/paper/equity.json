@@ -1,0 +1,74 @@
+[
+ {
+  "date": "2026-10-20",
+  "equity": 49975,
+  "spy_bench": 50000,
+  "calls_equity": null
+ },
+ {
+  "date": "2026-10-21",
+  "equity": 50207.05,
+  "spy_bench": 50262.66,
+  "calls_equity": 50172.41
+ },
+ {
+  "date": "2026-10-22",
+  "equity": 49869.58,
+  "spy_bench": 49669.07,
+  "calls_equity": 49788.14
+ },
+ {
+  "date": "2026-10-23",
+  "equity": 49596.5,
+  "spy_bench": 49409.66,
+  "calls_equity": 49486.43
+ },
+ {
+  "date": "2026-10-26",
+  "equity": 49862.86,
+  "spy_bench": 49760.74,
+  "calls_equity": 49756.47
+ },
+ {
+  "date": "2026-10-27",
+  "equity": 49593.16,
+  "spy_bench": 50039.66,
+  "calls_equity": 49604.79
+ },
+ {
+  "date": "2026-10-28",
+  "equity": 49824.01,
+  "spy_bench": 50211.95,
+  "calls_equity": 49882.7
+ },
+ {
+  "date": "2026-10-29",
+  "equity": 49370.88,
+  "spy_bench": 50020.15,
+  "calls_equity": 49375.02
+ },
+ {
+  "date": "2026-10-30",
+  "equity": 48963.1,
+  "spy_bench": 49136.6,
+  "calls_equity": 48469.66
+ },
+ {
+  "date": "2026-11-02",
+  "equity": 48565.54,
+  "spy_bench": 48897.99,
+  "calls_equity": 47947.73
+ },
+ {
+  "date": "2026-11-03",
+  "equity": 48476.88,
+  "spy_bench": 49044.28,
+  "calls_equity": 47983.96
+ },
+ {
+  "date": "2026-11-04",
+  "equity": 48472.83,
+  "spy_bench": 49854.37,
+  "calls_equity": 48589.17
+ }
+]

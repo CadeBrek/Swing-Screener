@@ -19,18 +19,14 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (DATA, today_et, path, dump, load, read_list, download, ret_since, wilder_atr,
                     earnings_info, first_event_on_or_after, yahoo)
 from insiders import insider_read
+import rules_v1 as rules
 
-RULES_VERSION = "v1"
 UNIVERSE_SIZE = 100
 MIN_CAP, MIN_PRICE, MIN_VOL, MIN_BARS = 10e9, 10, 1_000_000, 126
 SECTOR_ETFS = [("Energy", "XLE"), ("Health care", "XLV"), ("Consumer staples", "XLP"), ("Technology", "XLK"),
                ("Materials", "XLB"), ("Consumer discretionary", "XLY"), ("Communication services", "XLC"),
                ("Financials", "XLF"), ("Real estate", "XLRE"), ("Industrials", "XLI"), ("Utilities", "XLU")]
 MARKET = ["SPY", "VOO", "MTUM", "IJR", "^VIX", "^TNX", "CL=F"] + [e for _, e in SECTOR_ETFS]
-GROUP_OF_SECTOR = {"Energy": "Energy", "Healthcare": "Healthcare", "Technology": "Tech",
-                   "Financial Services": "Financials", "Consumer Defensive": "Staples", "Industrials": "Industrials",
-                   "Consumer Cyclical": "Consumer", "Basic Materials": "Materials", "Utilities": "Utilities",
-                   "Real Estate": "Real estate", "Communication Services": "Communication"}
 
 ASOF = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--asof=")), None)
 SECOND_CLASS = {"GOOG", "FOX", "NWS", "BRK-A", "BF-A", "UHAL-B"}  # keep GOOGL, FOXA, NWSA, BRK-B ...
@@ -66,11 +62,6 @@ def info(s):
         return s, yf.Ticker(yahoo(s)).info
     except Exception:
         return s, {}
-
-
-def pct_rank(series):
-    vals = series.tolist()
-    return series.apply(lambda v: sum(1 for x in vals if x <= v) / len(vals) * 100)
 
 
 def r2(x):
@@ -163,31 +154,8 @@ def main():
                     "spy_price": r2(bars["SPY"]["Close"].iloc[-1])}
     sectors = [{"sector": n, "etf": e, "r3m": R(e, 3), "r6m": R(e, 6)} for n, e in SECTOR_ETFS]
 
-    # ---- STEP 4: score (exact v1 rules) -------------------------------------------------------
-    def skip1(long, r1m):
-        return ((1 + long / 100) / (1 + r1m / 100) - 1) * 100
-    df = df.dropna(subset=["r1m", "r3m", "r6m", "r1y", "ma50", "ma200"]).reset_index(drop=True)
-    df["rs3"] = df.apply(lambda r: skip1(r.r3m, r.r1m), axis=1) - skip1(spy[3], spy[1])
-    df["rs6"] = df.apply(lambda r: skip1(r.r6m, r.r1m), axis=1) - skip1(spy[6], spy[1])
-    df["rs12"] = df["r1y"] - spy[12]
-    df["rs_score"] = 0.4 * pct_rank(df["rs6"]) + 0.4 * pct_rank(df["rs3"]) + 0.2 * pct_rank(df["rs12"])
-    df["rs_pct"] = pct_rank(df["rs_score"]).round().astype(int)
-    df["trend"] = ((df.price > df.ma200).astype(int) + (df.ma50 > df.ma200).astype(int) +
-                   (df.price > df.ma50).astype(int) + (df.price >= 0.85 * df.hi52).astype(int))
-    df["off_high"] = (df.price / df.hi52 - 1) * 100
-    df["ext_50"] = (df.price / df.ma50 - 1) * 100
-
-    def why(r):
-        w = []
-        if not r.price > r.ma200: w.append("below 200-day")
-        if not r.ma50 > r.ma200: w.append("50-day below 200-day")
-        if not r.rs_pct >= 60: w.append("RS rank < 60")
-        return ", ".join(w)
-    df["why_not"] = df.apply(why, axis=1)
-    df["passes"] = df["why_not"] == ""
-    df["final"] = 0.5 * df.rs_pct + 0.35 * (df.trend / 4 * 100) + 0.15 * (100 + df.off_high * 4).clip(lower=0)
-    df["group"] = df["ysector"].map(GROUP_OF_SECTOR).fillna("Other")
-    df = df.sort_values("final", ascending=False).reset_index(drop=True)
+    # ---- STEP 4: score (exact v1 rules, shared with the backtest) -------------------------------
+    df = rules.score(df, spy)
 
     screen = [{"symbol": r.symbol, "sector": r.sector, "passes": bool(r.passes), "score": round(r.final, 1),
                "rs_pct": int(r.rs_pct), "trend": int(r.trend), "r3m": r2(r.r3m), "r6m": r2(r.r6m), "r1y": r2(r.r1y),
@@ -199,13 +167,7 @@ def main():
                 for r in df.itertuples()]
 
     # ---- STEP 5: finalists ----------------------------------------------------------------------
-    picks, per_group = [], {}
-    for r in df[df.passes].itertuples():
-        if per_group.get(r.group, 0) >= 2:
-            continue
-        picks.append(r); per_group[r.group] = per_group.get(r.group, 0) + 1
-        if len(picks) == 8:
-            break
+    picks = rules.pick_finalists(df)
     finalists = []
     for rank, r in enumerate(picks, 1):
         s = r.symbol
@@ -221,7 +183,7 @@ def main():
             errors.append(f"{s} insiders: {ins.pop('_error')}")
         target = inf.get("targetMeanPrice")
         rec = inf.get("recommendationMean")
-        extended = r.ext_50 > 12
+        extended = r.ext_50 > rules.EXT_CUT
         if extended:
             status, entry_lo, entry_hi = "Wait for pullback", r.ma50, r.ma50 * 1.05
         else:
@@ -229,7 +191,7 @@ def main():
             entry_hi = r.price
             entry_lo = r.price - atr if atr else r.price
         if atr:
-            stop, basis = entry_hi - 2.5 * atr, "2.5 × ATR below entry"
+            stop, basis = entry_hi - rules.STOP_ATR * atr, "2.5 × ATR below entry"
         else:
             stop, basis = r.ma50 * 0.98, "2% under 50-day (ATR unavailable)"
             errors.append(f"{s}: ATR unavailable, used 50-day fallback")
@@ -248,7 +210,7 @@ def main():
 
     prices_all = {s.replace("^", ""): r2(d["Close"].iloc[-1]) for s, d in bars.items() if d.index[-1] == asof}
     prices_all["VIX"] = vix
-    status = {"run": str(TODAY), "data_date": str(asof.date()), "rules_version": RULES_VERSION,
+    status = {"run": str(TODAY), "data_date": str(asof.date()), "rules_version": rules.RULES_VERSION,
               "source": "Yahoo Finance (yfinance) + SEC EDGAR", "universe": len(universe),
               "passing": int(df.passes.sum()), "finalists": len(finalists), "regime_extra": regime_extra,
               "errors": errors, "ok": str(asof.date()) == str(TODAY) and len(universe) >= 80 and len(finalists) > 0}
