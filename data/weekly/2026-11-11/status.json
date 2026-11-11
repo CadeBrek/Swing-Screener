@@ -7,11 +7,11 @@
  "passing": 36,
  "finalists": 8,
  "regime_extra": {
-  "spy_1m": -2.32,
-  "spy_1y": 11.35,
-  "vix_1m_change": 18.06,
-  "wti_ytd": 50.1,
-  "spy_price": 760.52
+  "spy_1m": -2.35,
+  "spy_1y": 11.32,
+  "vix_1m_change": 17.39,
+  "wti_ytd": 50.3,
+  "spy_price": 760.28
  },
  "errors": [
   "TMO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",

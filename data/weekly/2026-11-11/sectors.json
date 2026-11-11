@@ -2,67 +2,67 @@
  {
   "sector": "Energy",
   "etf": "XLE",
-  "r3m": 3.51,
-  "r6m": 10.32
+  "r3m": 3.62,
+  "r6m": 10.43
  },
  {
   "sector": "Health care",
   "etf": "XLV",
-  "r3m": 12.18,
-  "r6m": 31.76
+  "r3m": 12.28,
+  "r6m": 31.88
  },
  {
   "sector": "Consumer staples",
   "etf": "XLP",
-  "r3m": 7.6,
-  "r6m": 9.3
+  "r3m": 7.79,
+  "r6m": 9.49
  },
  {
   "sector": "Technology",
   "etf": "XLK",
-  "r3m": -5.89,
-  "r6m": -1.54
+  "r3m": -6.06,
+  "r6m": -1.73
  },
  {
   "sector": "Materials",
   "etf": "XLB",
-  "r3m": -0.46,
-  "r6m": 1.41
+  "r3m": -0.3,
+  "r6m": 1.57
  },
  {
   "sector": "Consumer discretionary",
   "etf": "XLY",
-  "r3m": 1.48,
-  "r6m": 1.37
+  "r3m": 1.56,
+  "r6m": 1.45
  },
  {
   "sector": "Communication services",
   "etf": "XLC",
-  "r3m": -2.29,
-  "r6m": -5.93
+  "r3m": -2.35,
+  "r6m": -6.0
  },
  {
   "sector": "Financials",
   "etf": "XLF",
-  "r3m": 1.36,
-  "r6m": 14.47
+  "r3m": 1.43,
+  "r6m": 14.55
  },
  {
   "sector": "Real estate",
   "etf": "XLRE",
-  "r3m": 0.95,
-  "r6m": -0.16
+  "r3m": 1.05,
+  "r6m": -0.06
  },
  {
   "sector": "Industrials",
   "etf": "XLI",
-  "r3m": -7.95,
-  "r6m": -2.35
+  "r3m": -7.88,
+  "r6m": -2.27
  },
  {
   "sector": "Utilities",
   "etf": "XLU",
-  "r3m": 0.36,
-  "r6m": -3.0
+  "r3m": 0.45,
+  "r6m": -2.91
  }
 ]
