@@ -1,0 +1,44 @@
+[
+ {
+  "metric": "S&P 500 (SPY) 3-month",
+  "value": -0.74,
+  "unit": "%",
+  "read": "Flat, losing momentum"
+ },
+ {
+  "metric": "S&P 500 (SPY) 6-month",
+  "value": 4.36,
+  "unit": "%",
+  "read": "Still positive medium-term"
+ },
+ {
+  "metric": "VIX",
+  "value": 21.15,
+  "unit": "",
+  "read": "Elevated, up 38% in a month"
+ },
+ {
+  "metric": "Momentum factor vs S&P, 3-month",
+  "value": -8.09,
+  "unit": "%",
+  "read": "Momentum badly lagging"
+ },
+ {
+  "metric": "Small caps vs S&P, 3-month",
+  "value": -3.58,
+  "unit": "%",
+  "read": "Small caps behind"
+ },
+ {
+  "metric": "10-year Treasury yield",
+  "value": 4.91,
+  "unit": "%",
+  "read": "High rates, a headwind"
+ },
+ {
+  "metric": "WTI crude",
+  "value": 96.46,
+  "unit": "$",
+  "read": "Back under $100, up 67% YTD"
+ }
+]

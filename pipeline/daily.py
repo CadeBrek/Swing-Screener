@@ -43,8 +43,13 @@ def main():
         prices["VIX"] = vix
     missing = sorted(s for s in syms if s not in prices)
 
+    # earnings for this week's AND last week's finalists: the dashboard may still be trading last
+    # week's list on a Monday, depending on which job finishes first
+    runs = sorted(d for d in (os.listdir(wk) if os.path.isdir(wk) else []) if d[:2] == "20")[-3:]
+    fin_syms = sorted({f["symbol"] for f in latest_fin} |
+                      {f["symbol"] for d in runs for f in load("weekly", d, "finalists.json", default=[])})
     earnings = {}
-    for f in latest_fin:
+    for f in [{"symbol": s} for s in fin_syms]:
         events, _ = earnings_info(f["symbol"])
         if events is None:
             errors.append(f"{f['symbol']}: earnings dates unavailable")
