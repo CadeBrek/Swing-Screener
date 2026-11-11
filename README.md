@@ -1,1 +1,1 @@
-# Swing-Screener
+# swing-screener
