@@ -1,12 +1,12 @@
 # Weekly swing trade screen
 
 Schedule: Mondays 6:47 pm ET (`CRON_TZ=America/New_York 47 18 * * 1`)
-Data: this repo's `data/weekly/latest/`, built by the "Weekly screen data" GitHub Action (Yahoo Finance + SEC EDGAR)
+Data: this repo's `data/weekly/latest/`, built by the "Weekly screen data" GitHub Action (Yahoo Finance; SEC EDGAR when reachable), with Alpha Vantage as the insider fallback
 Rules version: v1 (see `rules.json`)
 
 ## Prompt
 
-Refresh Cade's "Swing trade screener" dashboard: https://claude.ai/artifact/ULtzUMAxM2BaXZmpGbamzU (a Dashboard-type artifact). The numbers (universe, scores, gates, finalists, ATR stops, earnings, insider flags) are computed by code in Cade's GitHub repo CadeBrek/swing-screener; your job is the judgment half: news write-ups, the pick log, the learning log, publishing and the report. Do NOT use Bigdata.com or Alpha Vantage (Cade is out of credits on both). Use today's date in America/New_York as TODAY. Work in a scratch folder; write Python for all math (never compute numbers by hand). Never change the scoring rules (rules version v1; changes only come from the monthly review with Cade's approval, as a new rules version in the repo).
+Refresh Cade's "Swing trade screener" dashboard: https://claude.ai/artifact/ULtzUMAxM2BaXZmpGbamzU (a Dashboard-type artifact). The numbers (universe, scores, gates, finalists, ATR stops, earnings, insider flags) are computed by code in Cade's GitHub repo CadeBrek/swing-screener; your job is the judgment half: news write-ups, the pick log, the learning log, publishing and the report. Do NOT use Bigdata.com (Cade is out of credits); use Alpha Vantage only for the insider fallback in STEP 2b. Use today's date in America/New_York as TODAY. Work in a scratch folder; write Python for all math (never compute numbers by hand). Never change the scoring rules (rules version v1; changes only come from the monthly review with Cade's approval, as a new rules version in the repo).
 
 STEP 1 - Get this week's data. Call add_repo with owner CadeBrek, repo swing-screener (access push), then `git clone --depth 1 https://github.com/CadeBrek/swing-screener repo`. Read repo/data/weekly/latest/status.json.
 - If status.run == TODAY and status.ok is true, continue.
@@ -14,6 +14,13 @@ STEP 1 - Get this week's data. Call add_repo with owner CadeBrek, repo swing-scr
 - Note status.errors (e.g. ATR or earnings unavailable for a symbol) for the report.
 
 STEP 2 - Files. From repo/data/weekly/latest/ take screen.json, sectors.json, features.json and prices_all.json as they are. regime.json: fill each row's "read" with a 2-6 word plain description of the value (status.regime_extra has SPY 1-month/1-year, VIX 1-month change and WTI year-to-date change to help); change nothing else. finalists.json: the code leaves thesis, catch and invalidation blank, sentiment null (Bigdata's news sentiment has no free source; analyst_rec is Yahoo's 1-5 analyst mean, 1 = strong buy).
+
+STEP 2b - Insider fallback. The SEC blocks GitHub's servers, so the code usually leaves insider_flag "Unavailable". For each finalist whose insider_flag is "Unavailable", call Alpha Vantage INSIDER_TRANSACTIONS (symbol, from_date = TODAY minus 90 days), ONE CALL AT A TIME at least 2 seconds apart (8 of the free key's 25 daily calls). Parse the rows with python (transcribe the relevant rows into a script if the result is inline; if it is saved to a file, read it from there). Use only transactions dated within the last 90 days.
+  - Count ONLY open-market purchases: acquisitions coded P, or described as a purchase at market price, with a share price above 0. Ignore grants/awards (A), option exercises (M), shares withheld for taxes (F), gifts (G), and any row with a zero price.
+  - insider_buys_90d = number of distinct insiders with an open-market purchase.
+  - insider_flag (exactly one of these words): "Strong buy" = 2 or more distinct insiders bought, OR a CEO, CFO or President bought $100,000 or more in total. "Buy" = otherwise, at least 1 insider bought. "Caution" = no buys, and 3 or more distinct officers or directors made open-market sales (code S) totalling over $10,000,000, or a CEO/CFO sold more than 25% of their holdings where the data shows holdings after the trade. "Neutral" = everything else. "Unavailable" = the call failed, was rate-limited or returned nothing usable (including an empty list). Never guess, and never write "Neutral" when the data is missing.
+  - insider_note = one plain sentence from the data: who bought or sold, dollar totals, and dates.
+  - The insider read is information only. It does NOT change score, rank, status, entry zone or stop.
 
 STEP 3 - News. For each finalist run one WebSearch for recent news ("<company name> stock" with the month and year), and WebFetch an article if the snippets are too thin. Write three short fields in plain English, paraphrased (never copy sentences), only from the data and articles you retrieved: thesis (why it screens, 1-2 sentences, cite the actual momentum numbers from the file), catch (main risk or reason to wait, 1-2 sentences; mention the insider_note if the flag is Strong buy, Buy or Caution), invalidation (a concrete price level from the file, such as the stop or the 50-day, or an event). Save the finished finalists.json.
 
