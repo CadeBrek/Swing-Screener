@@ -1,0 +1,27 @@
+{
+ "run": "2026-11-02",
+ "data_date": "2026-11-02",
+ "rules_version": "v1",
+ "source": "Yahoo Finance (yfinance) + SEC EDGAR",
+ "universe": 100,
+ "passing": 29,
+ "finalists": 8,
+ "regime_extra": {
+  "spy_1m": -2.28,
+  "spy_1y": 10.27,
+  "vix_1m_change": 38.14,
+  "wti_ytd": 68.0,
+  "spy_price": 752.1
+ },
+ "errors": [
+  "MRK insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "TMO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "DE insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "AAPL insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "ADI insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "XOM insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "CVX insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "PM insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json"
+ ],
+ "ok": true
+}
