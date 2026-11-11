@@ -1,7 +1,123 @@
 {
  "date": "2026-11-11",
  "source": "Alpaca options snapshots (indicative feed)",
- "quotes": [],
- "errors": [],
- "status": "Alpaca keys not set: add ALPACA_API_KEY and ALPACA_SECRET_KEY as GitHub secrets"
+ "quotes": [
+  {
+   "date": "2026-11-11",
+   "contract": "CRWD270219C00240000",
+   "symbol": "CRWD",
+   "strike": 240,
+   "expiry": "2027-02-19",
+   "underlying": 229.06,
+   "bid": 24.33,
+   "ask": 27.63,
+   "market_mid": 25.98,
+   "spread_pct": 12.7,
+   "market_iv": 0.6092,
+   "market_delta": 0.5234,
+   "model_iv": 0.5543,
+   "model_mid": 23.2,
+   "model_vs_market_pct": -10.7,
+   "contracts": 0.23,
+   "status": "ok"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "TMO270219C00640000",
+   "symbol": "TMO",
+   "strike": 640,
+   "expiry": "2027-02-19",
+   "underlying": 717.71,
+   "model_mid": 102.03,
+   "status": "no quote"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "MRK270219C00140000",
+   "symbol": "MRK",
+   "strike": 140,
+   "expiry": "2027-02-19",
+   "underlying": 147.18,
+   "model_mid": 15.47,
+   "status": "no quote"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "DE270219C00630000",
+   "symbol": "DE",
+   "strike": 630,
+   "expiry": "2027-02-19",
+   "underlying": 691.75,
+   "model_mid": 87.78,
+   "status": "no quote"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "XOM270219C00170000",
+   "symbol": "XOM",
+   "strike": 170,
+   "expiry": "2027-02-19",
+   "underlying": 166.71,
+   "bid": 7.87,
+   "ask": 8.13,
+   "market_mid": 8.0,
+   "spread_pct": 3.25,
+   "market_iv": 0.2486,
+   "market_delta": 0.5003,
+   "model_iv": 0.268,
+   "model_mid": 8.87,
+   "model_vs_market_pct": 10.9,
+   "contracts": 0.65,
+   "status": "ok"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "ADI270219C00380000",
+   "symbol": "ADI",
+   "strike": 380,
+   "expiry": "2027-02-19",
+   "underlying": 409.08,
+   "model_mid": 53.32,
+   "status": "no quote"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "PM270219C00195000",
+   "symbol": "PM",
+   "strike": 195,
+   "expiry": "2027-02-19",
+   "underlying": 196.35,
+   "model_mid": 13.51,
+   "status": "no quote"
+  },
+  {
+   "date": "2026-11-11",
+   "contract": "AAPL270219C00330000",
+   "symbol": "AAPL",
+   "strike": 330,
+   "expiry": "2027-02-19",
+   "underlying": 355.63,
+   "bid": 35.95,
+   "ask": 38.38,
+   "market_mid": 37.17,
+   "spread_pct": 6.54,
+   "market_iv": 0.2726,
+   "market_delta": 0.7474,
+   "model_iv": 0.2292,
+   "model_mid": 35.58,
+   "model_vs_market_pct": -4.3,
+   "contracts": 0.2,
+   "status": "ok"
+  }
+ ],
+ "errors": [
+  "TMO270219C00640000: no quote (strike may not be listed)",
+  "MRK270219C00140000: no quote (strike may not be listed)",
+  "DE270219C00630000: no quote (strike may not be listed)",
+  "ADI270219C00380000: no quote (strike may not be listed)",
+  "PM270219C00195000: no quote (strike may not be listed)"
+ ],
+ "avg_model_vs_market_pct": -1.4,
+ "avg_abs_model_gap_pct": 8.6,
+ "status": "3 of 8 calls priced"
 }

@@ -1,1 +1,14 @@
-Alpaca keys not set: add ALPACA_API_KEY and ALPACA_SECRET_KEY as GitHub secrets
+{
+ "date": "2026-11-11",
+ "source": "Alpaca options snapshots (indicative feed)",
+ "errors": [
+  "TMO270219C00640000: no quote (strike may not be listed)",
+  "MRK270219C00140000: no quote (strike may not be listed)",
+  "DE270219C00630000: no quote (strike may not be listed)",
+  "ADI270219C00380000: no quote (strike may not be listed)",
+  "PM270219C00195000: no quote (strike may not be listed)"
+ ],
+ "avg_model_vs_market_pct": -1.4,
+ "avg_abs_model_gap_pct": 8.6,
+ "status": "3 of 8 calls priced"
+}
