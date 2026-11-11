@@ -1,0 +1,106 @@
+{
+ "run": "2026-11-11",
+ "window": [
+  "2015-12-11",
+  "2026-11-09"
+ ],
+ "weeks": 571,
+ "universe": "today's S&P 500 members, top 100 by 63-day dollar volume each week",
+ "rules_version": "v1",
+ "baseline": {
+  "rs_gate": 60,
+  "stop_atr": 2.5,
+  "pullback_cut": 12
+ },
+ "baseline_stats": {
+  "rs_gate": 60.0,
+  "stop_atr": 2.5,
+  "pullback_cut": 12.0,
+  "total_return_pct": 154.9,
+  "cagr_pct": 9.0,
+  "max_drawdown_pct": -32.4,
+  "sharpe": 0.53,
+  "trades": 725.0,
+  "win_rate_pct": 40.4,
+  "avg_trade_pct": 1.67,
+  "avg_names_held": 7.3
+ },
+ "spy_stats": {
+  "total_return_pct": 276.7,
+  "cagr_pct": 12.9,
+  "max_drawdown_pct": -34.1,
+  "sharpe": 0.77
+ },
+ "best_by_sharpe": [
+  {
+   "rs_gate": 80,
+   "stop_atr": 3.0,
+   "pullback_cut": 8,
+   "total_return_pct": 281.8,
+   "cagr_pct": 13.1,
+   "max_drawdown_pct": -32.3,
+   "sharpe": 0.72,
+   "trades": 935,
+   "win_rate_pct": 47.2,
+   "avg_trade_pct": 1.67,
+   "avg_names_held": 6.8
+  },
+  {
+   "rs_gate": 80,
+   "stop_atr": 2.5,
+   "pullback_cut": 8,
+   "total_return_pct": 248.0,
+   "cagr_pct": 12.1,
+   "max_drawdown_pct": -31.3,
+   "sharpe": 0.66,
+   "trades": 894,
+   "win_rate_pct": 46.6,
+   "avg_trade_pct": 1.69,
+   "avg_names_held": 6.4
+  },
+  {
+   "rs_gate": 80,
+   "stop_atr": 2.0,
+   "pullback_cut": 8,
+   "total_return_pct": 233.4,
+   "cagr_pct": 11.7,
+   "max_drawdown_pct": -31.1,
+   "sharpe": 0.63,
+   "trades": 870,
+   "win_rate_pct": 45.6,
+   "avg_trade_pct": 1.78,
+   "avg_names_held": 6.0
+  },
+  {
+   "rs_gate": 70,
+   "stop_atr": 3.0,
+   "pullback_cut": 12,
+   "total_return_pct": 206.1,
+   "cagr_pct": 10.8,
+   "max_drawdown_pct": -33.5,
+   "sharpe": 0.62,
+   "trades": 834,
+   "win_rate_pct": 43.2,
+   "avg_trade_pct": 1.68,
+   "avg_names_held": 7.8
+  },
+  {
+   "rs_gate": 80,
+   "stop_atr": 2.0,
+   "pullback_cut": 15,
+   "total_return_pct": 230.6,
+   "cagr_pct": 11.6,
+   "max_drawdown_pct": -36.1,
+   "sharpe": 0.62,
+   "trades": 906,
+   "win_rate_pct": 44.3,
+   "avg_trade_pct": 1.43,
+   "avg_names_held": 6.4
+  }
+ ],
+ "caveats": [
+  "survivorship bias: today's index members only, so results are optimistic",
+  "simplified trading plan: no earnings waits, pullback-zone entries or time stops; idle cash earns 0",
+  "36 rule variants were tried: the best one is partly luck (data snooping); prefer variants that win across neighbouring settings and in the live learning log"
+ ]
+}
