@@ -1,27 +1,27 @@
 {
  "run": "2026-11-11",
  "data_date": "2026-11-10",
- "rules_version": "v1",
+ "rules_version": "v2",
  "source": "Yahoo Finance (yfinance) + SEC EDGAR",
  "universe": 100,
- "passing": 34,
+ "passing": 17,
  "finalists": 8,
  "regime_extra": {
   "spy_1m": -3.68,
   "spy_1y": 10.05,
   "vix_1m_change": 17.86,
-  "wti_ytd": 48.9,
+  "wti_ytd": 49.2,
   "spy_price": 749.92
  },
  "errors": [
   "TMO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
   "ABBV insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "MRK insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "GILD insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
   "V insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
   "AAPL insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
-  "MSFT insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
-  "KO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
-  "MA insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
-  "MO insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json"
+  "COP insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json",
+  "ANET insiders: HTTPError: 403 Client Error: Forbidden for url: https://www.sec.gov/files/company_tickers.json"
  ],
  "ok": false
 }
