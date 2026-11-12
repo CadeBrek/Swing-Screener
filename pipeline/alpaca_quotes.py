@@ -80,7 +80,7 @@ def main():
             rr.raise_for_status()
             snap = rr.json().get("snapshots", {}) or {}
         except Exception as ex:
-            out["errors"].append(f"{c['symbol']} chain lookup: {type(ex).__name__}"); return None, None
+            out["errors"].append(f"{c['symbol']} chain lookup: {type(ex).__name__}"); return None, None, None, None
         best = None
         for osym, sn in snap.items():
             body = osym[len(osym) - 15:]                     # YYMMDD + C + 8-digit strike
