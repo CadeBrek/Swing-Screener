@@ -70,5 +70,11 @@
   "equity": 48472.83,
   "spy_bench": 49854.37,
   "calls_equity": 48589.17
+ },
+ {
+  "date": "2026-11-11",
+  "equity": 47994.51,
+  "spy_bench": 49399.26,
+  "calls_equity": 47684.8
  }
 ]
