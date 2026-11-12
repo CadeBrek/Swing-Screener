@@ -1,0 +1,213 @@
+HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BCR-201712"}}}
+$BCR-201712: No data found, symbol may be delisted
+$ATVI: No data found, symbol may be delisted
+$APOL-201702: No data found, symbol may be delisted
+$AGN-201503: No data found, symbol may be delisted
+$ABMD: No data found, symbol may be delisted
+$ADT-201604: No data found, symbol may be delisted
+$BEAM-201404: No data found, symbol may be delisted
+$BTUUQ-201704: No data found, symbol may be delisted
+$BRCM-201601: No data found, symbol may be delisted
+$ADS: No data found, symbol may be delisted
+$ALTR-201512: No data found, symbol may be delisted
+$AET: No data found, symbol may be delisted
+$AVP: No data found, symbol may be delisted
+$AET-201811: No data found, symbol may be delisted
+$AABA: No data found, symbol may be delisted
+$ANDV-201809: No data found, symbol may be delisted
+$BMS: No data found, symbol may be delisted
+$BHGE: No data found, symbol may be delisted
+$ANSS: No data found, symbol may be delisted
+$BLL: No data found, symbol may be delisted
+$BK: possibly delisted; no price data found  (period=13y)
+$ALXN: No data found, symbol may be delisted
+$ANDV: No data found, symbol may be delisted
+$ARG-201605: No data found, symbol may be delisted
+$BIG: No data found, symbol may be delisted
+$ARNC: No data found, symbol may be delisted
+$BMC-201309: No data found, symbol may be delisted
+$AGN: No data found, symbol may be delisted
+
+28 Failed downloads:
+['BCR-201712', 'ATVI', 'APOL-201702', 'AGN-201503', 'ABMD', 'ADT-201604', 'BEAM-201404', 'BTUUQ-201704', 'BRCM-201601', 'ADS', 'ALTR-201512', 'AET', 'AVP', 'AET-201811', 'AABA', 'ANDV-201809', 'BMS', 'BHGE', 'ANSS', 'BLL', 'ALXN', 'ANDV', 'ARG-201605', 'BIG', 'ARNC', 'BMC-201309', 'AGN']: No data found, symbol may be delisted
+['BK']: possibly delisted; no price data found  (period=13y)
+$DRE: No data found, symbol may be delisted
+$DNR: No data found, symbol may be delisted
+$CTL: No data found, symbol may be delisted
+$CBE-201211: No data found, symbol may be delisted
+$DELL-201310: No data found, symbol may be delisted
+$DD-201708: No data found, symbol may be delisted
+$CA-201811: No data found, symbol may be delisted
+$CB-201601: No data found, symbol may be delisted
+$DNB: No data found, symbol may be delisted
+$CXO: No data found, symbol may be delisted
+$CSRA-201804: No data found, symbol may be delisted
+$CMA: possibly delisted; no price data found  (period=13y)
+$CAM-201604: No data found, symbol may be delisted
+$CFN-201503: No data found, symbol may be delisted
+$COL: No data found, symbol may be delisted
+$CMCSK-201512: No data found, symbol may be delisted
+$CVC-201606: No data found, symbol may be delisted
+$CTRA: possibly delisted; no price data found  (period=13y)
+$DOW-201708: No data found, symbol may be delisted
+$CVH-201305: No data found, symbol may be delisted
+$COV-201501: No data found, symbol may be delisted
+$DF: No data found, symbol may be delisted
+$CERN: No data found, symbol may be delisted
+$CTXS: No data found, symbol may be delisted
+$CA: possibly delisted; no price data found  (period=13y)
+$DISH: No data found, symbol may be delisted
+$DFS: No data found, symbol may be delisted
+$CPGX-201606: No data found, symbol may be delisted
+$CELG: No data found, symbol may be delisted
+$CCE: No data found, symbol may be delisted
+$CHK: No data found, symbol may be delisted
+$COL-201811: No data found, symbol may be delisted
+$BXLT-201606: No data found, symbol may be delisted
+$DISCK: No data found, symbol may be delisted
+$DO: No data found, symbol may be delisted
+$DTV-201507: No data found, symbol may be delisted
+
+36 Failed downloads:
+['DRE', 'DNR', 'CTL', 'CBE-201211', 'DELL-201310', 'DD-201708', 'CA-201811', 'CB-201601', 'DNB', 'CXO', 'CSRA-201804', 'CAM-201604', 'CFN-201503', 'COL', 'CMCSK-201512', 'CVC-201606', 'DOW-201708', 'CVH-201305', 'COV-201501', 'DF', 'CERN', 'CTXS', 'DISH', 'DFS', 'CPGX-201606', 'CELG', 'CCE', 'CHK', 'COL-201811', 'BXLT-201606', 'DISCK', 'DO', 'DTV-201507']: No data found, symbol may be delisted
+['CMA', 'CTRA', 'CA']: possibly delisted; no price data found  (period=13y)
+$GAS-201606: No data found, symbol may be delisted
+$FBHS: No data found, symbol may be delisted
+$GPS: No data found, symbol may be delisted
+$EVHC-201810: No data found, symbol may be delisted
+$FRX-201406: No data found, symbol may be delisted
+$FI: possibly delisted; no price data found  (period=13y)
+$ENDP: No data found, symbol may be delisted
+$FII: No data found, symbol may be delisted
+$GGP: No data found, symbol may be delisted
+$FTI-201701: No data found, symbol may be delisted
+$FDO-201507: No data found, symbol may be delisted
+$EVHC: No data found, symbol may be delisted
+$FTR: No data found, symbol may be delisted
+$FLIR: No data found, symbol may be delisted
+$EMC-201609: No data found, symbol may be delisted
+$ETFC: No data found, symbol may be delisted
+$GMCR-201603: No data found, symbol may be delisted
+$ESRX-201812: No data found, symbol may be delisted
+$HBI: possibly delisted; no price data found  (period=13y)
+$ESRX: No data found, symbol may be delisted
+$FRC: No data found, symbol may be delisted
+$ESV: No data found, symbol may be delisted
+$HCBK-201510: No data found, symbol may be delisted
+$FL: No data found, symbol may be delisted
+$GGP-201808: No data found, symbol may be delisted
+$HES: No data found, symbol may be delisted
+$HCP: No data found, symbol may be delisted
+$DWDP: No data found, symbol may be delisted
+$HAR-201703: No data found, symbol may be delisted
+
+29 Failed downloads:
+['GAS-201606', 'FBHS', 'GPS', 'EVHC-201810', 'FRX-201406', 'ENDP', 'FII', 'GGP', 'FTI-201701', 'FDO-201507', 'EVHC', 'FTR', 'FLIR', 'EMC-201609', 'ETFC', 'GMCR-201603', 'ESRX-201812', 'ESRX', 'FRC', 'ESV', 'HCBK-201510', 'FL', 'GGP-201808', 'HES', 'HCP', 'DWDP', 'HAR-201703']: No data found, symbol may be delisted
+['FI', 'HBI']: possibly delisted; no price data found  (period=13y)
+$KSU: No data found, symbol may be delisted
+$KRFT-201507: No data found, symbol may be delisted
+$HNZ-201306: No data found, symbol may be delisted
+$LIFE-201402: No data found, symbol may be delisted
+$HSP-201509: No data found, symbol may be delisted
+$LLL: No data found, symbol may be delisted
+$IGT-201504: No data found, symbol may be delisted
+$JCI-201609: No data found, symbol may be delisted
+$JWN: No data found, symbol may be delisted
+$HOLX: No data found, symbol may be delisted
+$JCP: No data found, symbol may be delisted
+$LSI-201405: No data found, symbol may be delisted
+$K: possibly delisted; no price data found  (period=13y)
+$HOT-201609: No data found, symbol may be delisted
+$LM: No data found, symbol may be delisted
+$LO-201506: No data found, symbol may be delisted
+$HRS: No data found, symbol may be delisted
+$IPG: possibly delisted; no price data found  (period=13y)
+$JEC: No data found, symbol may be delisted
+$JOY-201704: No data found, symbol may be delisted
+$JNPR: No data found, symbol may be delisted
+$LLTC-201703: No data found, symbol may be delisted
+$LVLT-201710: No data found, symbol may be delisted
+
+23 Failed downloads:
+['KSU', 'KRFT-201507', 'HNZ-201306', 'LIFE-201402', 'HSP-201509', 'LLL', 'IGT-201504', 'JCI-201609', 'JWN', 'HOLX', 'JCP', 'LSI-201405', 'HOT-201609', 'LM', 'LO-201506', 'HRS', 'JEC', 'JOY-201704', 'JNPR', 'LLTC-201703', 'LVLT-201710']: No data found, symbol may be delisted
+['K', 'IPG']: possibly delisted; no price data found  (period=13y)
+$MYL: No data found, symbol may be delisted
+$PCP-201601: No data found, symbol may be delisted
+$MWV-201507: No data found, symbol may be delisted
+$MRO: No data found, symbol may be delisted
+$MMC: No data found, symbol may be delisted
+$PXD: No data found, symbol may be delisted
+$NYX-201311: No data found, symbol may be delisted
+$PBCT: No data found, symbol may be delisted
+$PETM-201503: No data found, symbol may be delisted
+$NBL: No data found, symbol may be delisted
+$PLL-201508: No data found, symbol may be delisted
+$POM-201603: No data found, symbol may be delisted
+$MXIM: No data found, symbol may be delisted
+$NLSN: No data found, symbol may be delisted
+$MNK: No data found, symbol may be delisted
+$PX: No data found, symbol may be delisted
+$MJN-201706: No data found, symbol may be delisted
+$MOLX-201312: No data found, symbol may be delisted
+$PDCO: No data found, symbol may be delisted
+$PCL-201602: No data found, symbol may be delisted
+$MON-201806: No data found, symbol may be delisted
+$PX-201810: No data found, symbol may be delisted
+
+22 Failed downloads:
+['MYL', 'PCP-201601', 'MWV-201507', 'MRO', 'MMC', 'PXD', 'NYX-201311', 'PBCT', 'PETM-201503', 'NBL', 'PLL-201508', 'POM-201603', 'MXIM', 'NLSN', 'MNK', 'PX', 'MJN-201706', 'MOLX-201312', 'PDCO', 'PCL-201602', 'MON-201806', 'PX-201810']: No data found, symbol may be delisted
+$SE-201702: No data found, symbol may be delisted
+$STJ-201701: No data found, symbol may be delisted
+$SCG: No data found, symbol may be delisted
+$TSS: No data found, symbol may be delisted
+$TE-201606: No data found, symbol may be delisted
+$SWN: No data found, symbol may be delisted
+$RHT: No data found, symbol may be delisted
+$TWC-201605: No data found, symbol may be delisted
+$SNDK-201605: No data found, symbol may be delisted
+$TWTR: No data found, symbol may be delisted
+$TEG-201506: No data found, symbol may be delisted
+$QEP: No data found, symbol may be delisted
+$RDC: No data found, symbol may be delisted
+$TWX-201806: No data found, symbol may be delisted
+$SWY-201501: No data found, symbol may be delisted
+$SCG-201812: No data found, symbol may be delisted
+$SRCL: No data found, symbol may be delisted
+$RRD: No data found, symbol may be delisted
+$SIAL-201511: No data found, symbol may be delisted
+$RAI-201707: No data found, symbol may be delisted
+$SPLS-201709: No data found, symbol may be delisted
+$TGNA: possibly delisted; no price data found  (period=13y)
+$SEE: possibly delisted; no price data found  (period=13y)
+$TIF: No data found, symbol may be delisted
+$RE: No data found, symbol may be delisted
+$SNI-201803: No data found, symbol may be delisted
+$SIVB: No data found, symbol may be delisted
+$TIE-201301: No data found, symbol may be delisted
+
+28 Failed downloads:
+['SE-201702', 'STJ-201701', 'SCG', 'TSS', 'TE-201606', 'SWN', 'RHT', 'TWC-201605', 'SNDK-201605', 'TWTR', 'TEG-201506', 'QEP', 'RDC', 'TWX-201806', 'SWY-201501', 'SCG-201812', 'SRCL', 'RRD', 'SIAL-201511', 'RAI-201707', 'SPLS-201709', 'TIF', 'RE', 'SNI-201803', 'SIVB', 'TIE-201301']: No data found, symbol may be delisted
+['TGNA', 'SEE']: possibly delisted; no price data found  (period=13y)
+$WBA: No data found, symbol may be delisted
+$XL: No data found, symbol may be delisted
+$WIN: No data found, symbol may be delisted
+$WFM-201708: No data found, symbol may be delisted
+$XEC: No data found, symbol may be delisted
+$WYND: No data found, symbol may be delisted
+$WCG: No data found, symbol may be delisted
+$VIAB: No data found, symbol may be delisted
+$XLNX: No data found, symbol may be delisted
+$VAR: No data found, symbol may be delisted
+$XL-201809: No data found, symbol may be delisted
+$X: No data found, symbol may be delisted
+$WRK: No data found, symbol may be delisted
+$WPX: No data found, symbol may be delisted
+
+14 Failed downloads:
+['WBA', 'XL', 'WIN', 'WFM-201708', 'XEC', 'WYND', 'WCG', 'VIAB', 'XLNX', 'VAR', 'XL-201809', 'X', 'WRK', 'WPX']: No data found, symbol may be delisted
+{
+ "tickers_in_index": 654,
+ "with_prices": 474,
+ "start": "2013-11-12",
+ "end": "2026-11-10"
+} fja05680/sp500 (S&P 500 Historical Components & Changes.csv)
