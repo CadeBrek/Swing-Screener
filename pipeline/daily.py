@@ -7,9 +7,11 @@ Writes data/daily/latest/:
   earnings.json  {"SYM": "2026-10-28T21:30:00Z"}  earliest earnings event on or after today - 3 days,
                  for this week's finalists
   status.json    {date, data_date, market_open, missing, errors, ok}
-market_open is false when Yahoo has no bar for today (weekend or market holiday): the paper run skips the day.
+market_open comes from the NYSE calendar (false on weekends and holidays: the paper run skips the day).
+data_current is false when Yahoo has no bar for today on a trading day: the paper run re-runs this job
+and, if it is still stale, tells Cade instead of skipping silently.
 """
-import json, os, sys, datetime as dt
+import json, os, sys, time, datetime as dt
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DATA, today_et, dump, load, read_list, download, earnings_info, first_event_on_or_after
@@ -24,11 +26,20 @@ def main():
     wk = os.path.join(DATA, "weekly")
     for d in (os.listdir(wk) if os.path.isdir(wk) else []):
         syms |= {f["symbol"] for f in load("weekly", d, "finalists.json", default=[])}
-    bars = download(syms, period="1mo")
-    if "SPY" not in bars:
-        raise SystemExit("no SPY data from Yahoo - stopping")
-    data_date = bars["SPY"].index[-1].date()
-    market_open = data_date == TODAY
+    # Was today a trading day? Ask the official NYSE calendar, never infer it from missing data:
+    # Yahoo sometimes drops or delays today's bar, which once made a normal day look like a holiday.
+    import pandas_market_calendars as mcal
+    market_open = len(mcal.get_calendar("NYSE").schedule(str(TODAY), str(TODAY))) > 0
+    for attempt in range(4):
+        bars = download(syms, period="1mo")
+        if "SPY" not in bars:
+            raise SystemExit("no SPY data from Yahoo - stopping")
+        data_date = bars["SPY"].index[-1].date()
+        if not market_open or data_date == TODAY:
+            break
+        errors.append(f"attempt {attempt + 1}: Yahoo's latest bar is {data_date}, not today; retrying")
+        time.sleep(90)
+    data_current = data_date == TODAY
 
     prices, change = {}, {}
     for s, d in bars.items():
@@ -58,10 +69,10 @@ def main():
         if utc:
             earnings[f["symbol"]] = utc
 
-    status = {"date": str(TODAY), "data_date": str(data_date), "market_open": market_open,
+    status = {"date": str(TODAY), "data_date": str(data_date), "market_open": market_open, "data_current": data_current,
               "finalists_run": load("weekly", "latest", "status.json", default={}).get("run"),
               "missing": missing, "errors": errors, "change_1d": change,
-              "ok": market_open and "SPY" in prices and "VOO" in prices}
+              "ok": market_open and data_current and "SPY" in prices and "VOO" in prices}
     dump(prices, "daily", "latest", "prices.json")
     dump(earnings, "daily", "latest", "earnings.json")
     dump(status, "daily", "latest", "status.json")
