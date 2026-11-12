@@ -1,9 +1,9 @@
 {
  "date": "2026-11-11",
- "data_date": "2026-11-11",
- "market_open": true,
+ "data_date": "2026-11-10",
+ "market_open": false,
  "finalists_run": "2026-11-11",
  "missing": [],
  "errors": [],
- "ok": true
+ "ok": false
 }
