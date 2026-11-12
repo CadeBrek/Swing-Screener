@@ -10,7 +10,9 @@ Writes data/options/latest.json and appends data/options/history.csv:
        market bid/ask/mid, Alpaca's implied vol and delta, the model's mid (Black-Scholes with the
        book's fixed vol), and the gap between them. The monthly review uses this to judge how far the
        modeled calls book is from reality.
-Free plan feed = "indicative" (quotes derived from the real market, trades delayed); good enough to
+When the book's exact contract isn't listed (not every stock has every monthly expiry or strike), the
+closest listed call is used instead and the model is re-priced on that contract, so the gap stays like
+for like. Free plan feed = "indicative" (quotes derived from the real market, trades delayed); good enough to
 check the model, not for exact fills.
 """
 import csv, json, math, os, sys, datetime as dt
@@ -65,14 +67,46 @@ def main():
         out["errors"].append(f"{type(e).__name__}: {e}"[:300])
         dump(out, "options", "latest.json"); print(out); return
 
+    hdr = {"APCA-API-KEY-ID": key, "APCA-API-SECRET-KEY": secret}
+
+    def nearest(c):
+        """Closest listed call to the book's (expiry within 75 days, strike within 15%): (occ, snapshot)."""
+        e = dt.date.fromisoformat(c["expiry"]); K = c["strike"]
+        try:
+            rr = requests.get(f"{URL}/{c['symbol'].replace('-', '.')}", headers=hdr, timeout=30, params={
+                "feed": "indicative", "type": "call", "limit": 1000,
+                "expiration_date_gte": str(e - dt.timedelta(days=75)), "expiration_date_lte": str(e + dt.timedelta(days=75)),
+                "strike_price_gte": round(K * 0.85, 2), "strike_price_lte": round(K * 1.15, 2)})
+            rr.raise_for_status()
+            snap = rr.json().get("snapshots", {}) or {}
+        except Exception as ex:
+            out["errors"].append(f"{c['symbol']} chain lookup: {type(ex).__name__}"); return None, None
+        best = None
+        for osym, sn in snap.items():
+            body = osym[len(osym) - 15:]                     # YYMMDD + C + 8-digit strike
+            ex = dt.datetime.strptime(body[:6], "%y%m%d").date(); k = int(body[7:]) / 1000
+            q = (sn.get("latestQuote") or {})
+            if not q.get("bp") or not q.get("ap"):
+                continue
+            score = (abs((ex - e).days), abs(k - K))
+            if best is None or score < best[0]:
+                best = (score, osym, sn, ex, k)
+        return (best[1], best[2], best[3], best[4]) if best else (None, None, None, None)
+
     rows = []
     for osym, c in syms.items():
         s = snaps.get(osym)
-        S = prices.get(c["symbol"])
-        T = (dt.date.fromisoformat(c["expiry"]) - TODAY).days / 365
-        model = round(bs_call(S, c["strike"], T, r, c["iv"]), 2) if S and c.get("iv") else None
+        sub = None
         if not s:
-            out["errors"].append(f"{osym}: no quote (strike may not be listed)")
+            alt, s, ex, k = nearest(c)
+            if alt:
+                sub = {"contract": alt, "expiry": str(ex), "strike": k}
+        S = prices.get(c["symbol"])
+        K_used = sub["strike"] if sub else c["strike"]; e_used = sub["expiry"] if sub else c["expiry"]
+        T = (dt.date.fromisoformat(e_used) - TODAY).days / 365
+        model = round(bs_call(S, K_used, T, r, c["iv"]), 2) if S and c.get("iv") else None
+        if not s:
+            out["errors"].append(f"{osym}: not listed, and no listed call within 75 days / 15% of strike")
             rows.append({"date": str(TODAY), "contract": osym, "symbol": c["symbol"], "strike": c["strike"],
                          "expiry": c["expiry"], "underlying": S, "model_mid": model, "status": "no quote"})
             continue
@@ -80,7 +114,8 @@ def main():
         bid, ask = q.get("bp"), q.get("ap")
         mid = round((bid + ask) / 2, 2) if bid and ask else (s.get("latestTrade") or {}).get("p")
         g = s.get("greeks") or {}
-        row = {"date": str(TODAY), "contract": osym, "symbol": c["symbol"], "strike": c["strike"], "expiry": c["expiry"],
+        row = {"date": str(TODAY), "contract": sub["contract"] if sub else osym, "symbol": c["symbol"],
+               "strike": K_used, "expiry": e_used, "book_contract": osym, "substitute": bool(sub),
                "underlying": S, "bid": bid, "ask": ask, "market_mid": mid,
                "spread_pct": round((ask - bid) / mid * 100, 2) if bid and ask and mid else None,
                "market_iv": s.get("impliedVolatility"), "market_delta": g.get("delta"),
@@ -96,7 +131,7 @@ def main():
     out["status"] = f"{len(ok)} of {len(rows)} calls priced"
     dump(out, "options", "latest.json")
     path = os.path.join(DATA, "options", "history.csv")
-    cols = ["date", "contract", "symbol", "strike", "expiry", "underlying", "bid", "ask", "market_mid", "spread_pct",
+    cols = ["date", "contract", "book_contract", "substitute", "symbol", "strike", "expiry", "underlying", "bid", "ask", "market_mid", "spread_pct",
             "market_iv", "market_delta", "model_iv", "model_mid", "model_vs_market_pct", "contracts", "status"]
     new = not os.path.exists(path)
     with open(path, "a", newline="") as f:
