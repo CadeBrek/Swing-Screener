@@ -1,145 +1,145 @@
 {
- "run": "2026-11-11",
+ "run": "2026-11-12",
  "rules_version": "v2",
  "window": [
   "2014-12-12",
-  "2026-11-11"
+  "2026-11-10"
  ],
  "data": {
   "membership": "fja05680/sp500 (S&P 500 Historical Components & Changes.csv)",
   "dividend_adjusted": true,
-  "stocks_with_prices": 473
+  "stocks_with_prices": 474
  },
  "v2_book_30_70": {
   "full": {
-   "cagr_pct": 15.27,
+   "cagr_pct": 15.15,
    "vol_pct": 17.97,
-   "sharpe": 0.881,
-   "sortino": 1.095,
+   "sharpe": 0.875,
+   "sortino": 1.087,
    "max_dd_pct": -32.94,
-   "calmar": 0.464,
+   "calmar": 0.46,
    "beta": 1.0,
    "alpha_pct": 1.48
   },
   "since_2022": {
-   "cagr_pct": 13.53,
+   "cagr_pct": 13.23,
    "vol_pct": 17.66,
-   "sharpe": 0.807,
-   "sortino": 1.128,
+   "sharpe": 0.792,
+   "sortino": 1.107,
    "max_dd_pct": -23.81,
-   "calmar": 0.568,
+   "calmar": 0.556,
    "beta": 0.97,
-   "alpha_pct": 2.15
+   "alpha_pct": 2.14
   },
   "last_12m": {
-   "cagr_pct": 17.24,
-   "vol_pct": 16.58,
-   "sharpe": 1.042,
-   "sortino": 1.587,
+   "cagr_pct": 15.58,
+   "vol_pct": 16.53,
+   "sharpe": 0.959,
+   "sortino": 1.456,
    "max_dd_pct": -9.88,
-   "calmar": 1.744,
+   "calmar": 1.576,
    "beta": 1.12,
-   "alpha_pct": 3.0
+   "alpha_pct": 2.79
   }
  },
  "v2_swing_alone": {
   "full": {
-   "cagr_pct": 18.0,
+   "cagr_pct": 17.87,
    "vol_pct": 22.35,
-   "sharpe": 0.853,
-   "sortino": 1.145,
+   "sharpe": 0.848,
+   "sortino": 1.138,
    "max_dd_pct": -31.36,
-   "calmar": 0.574,
+   "calmar": 0.57,
    "beta": 0.99,
    "alpha_pct": 4.84
   },
   "since_2022": {
-   "cagr_pct": 16.86,
+   "cagr_pct": 16.55,
    "vol_pct": 23.09,
-   "sharpe": 0.791,
-   "sortino": 1.162,
+   "sharpe": 0.779,
+   "sortino": 1.145,
    "max_dd_pct": -25.29,
-   "calmar": 0.667,
+   "calmar": 0.654,
    "beta": 0.92,
-   "alpha_pct": 6.87
+   "alpha_pct": 6.84
   },
   "last_12m": {
-   "cagr_pct": 25.46,
-   "vol_pct": 28.04,
-   "sharpe": 0.949,
-   "sortino": 1.516,
+   "cagr_pct": 22.73,
+   "vol_pct": 28.02,
+   "sharpe": 0.87,
+   "sortino": 1.395,
    "max_dd_pct": -24.68,
-   "calmar": 1.032,
-   "beta": 1.4,
-   "alpha_pct": 8.74
+   "calmar": 0.921,
+   "beta": 1.41,
+   "alpha_pct": 8.04
   },
   "trades": 627,
-  "win_rate_pct": 49.4,
-  "avg_trade_pct": 3.73
+  "win_rate_pct": 49.1,
+  "avg_trade_pct": 3.71
  },
  "v1": {
   "full": {
-   "cagr_pct": 9.47,
+   "cagr_pct": 9.42,
    "vol_pct": 19.21,
-   "sharpe": 0.567,
-   "sortino": 0.735,
+   "sharpe": 0.565,
+   "sortino": 0.733,
    "max_dd_pct": -37.38,
-   "calmar": 0.253,
+   "calmar": 0.252,
    "beta": 0.87,
-   "alpha_pct": -1.66
+   "alpha_pct": -1.61
   },
   "since_2022": {
-   "cagr_pct": 4.73,
-   "vol_pct": 17.93,
-   "sharpe": 0.348,
-   "sortino": 0.492,
+   "cagr_pct": 4.62,
+   "vol_pct": 17.94,
+   "sharpe": 0.342,
+   "sortino": 0.484,
    "max_dd_pct": -27.0,
-   "calmar": 0.175,
+   "calmar": 0.171,
    "beta": 0.73,
-   "alpha_pct": -2.83
+   "alpha_pct": -2.74
   },
   "last_12m": {
-   "cagr_pct": 5.79,
+   "cagr_pct": 6.01,
    "vol_pct": 18.39,
-   "sharpe": 0.398,
-   "sortino": 0.59,
+   "sharpe": 0.409,
+   "sortino": 0.606,
    "max_dd_pct": -12.66,
-   "calmar": 0.458,
+   "calmar": 0.475,
    "beta": 0.9,
-   "alpha_pct": -4.09
+   "alpha_pct": -2.96
   },
   "trades": 741,
   "win_rate_pct": 39.4,
-  "avg_trade_pct": 1.58
+  "avg_trade_pct": 1.57
  },
  "spy": {
   "full": {
-   "cagr_pct": 13.73,
+   "cagr_pct": 13.61,
    "vol_pct": 17.54,
-   "sharpe": 0.822,
-   "sortino": 1.008,
+   "sharpe": 0.816,
+   "sortino": 1.0,
    "max_dd_pct": -33.72,
-   "calmar": 0.407,
+   "calmar": 0.404,
    "beta": 1.0,
    "alpha_pct": -0.0
   },
   "since_2022": {
-   "cagr_pct": 11.52,
+   "cagr_pct": 11.23,
    "vol_pct": 17.37,
-   "sharpe": 0.715,
-   "sortino": 0.983,
+   "sharpe": 0.7,
+   "sortino": 0.962,
    "max_dd_pct": -24.5,
-   "calmar": 0.47,
+   "calmar": 0.458,
    "beta": 1.0,
-   "alpha_pct": -0.0
+   "alpha_pct": 0.0
   },
   "last_12m": {
-   "cagr_pct": 12.5,
-   "vol_pct": 13.73,
-   "sharpe": 0.927,
-   "sortino": 1.278,
+   "cagr_pct": 11.28,
+   "vol_pct": 13.67,
+   "sharpe": 0.85,
+   "sortino": 1.168,
    "max_dd_pct": -8.88,
-   "calmar": 1.407,
+   "calmar": 1.27,
    "beta": 1.0,
    "alpha_pct": 0.0
   }
@@ -148,7 +148,7 @@
   "variants": 36,
   "v2_rank_by_full_blend_sharpe": 3,
   "share_of_variants_whose_30_70_beats_spy_full_sharpe_pct": 55.6,
-  "median_blend_full_sharpe": 0.827
+  "median_blend_full_sharpe": 0.821
  },
  "caveats": [
   "about 15% of past index members lack Yahoo history (mostly acquired): optimistic",
