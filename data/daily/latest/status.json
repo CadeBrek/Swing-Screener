@@ -1,10 +1,16 @@
 {
  "date": "2026-11-11",
  "data_date": "2026-11-10",
- "market_open": false,
+ "market_open": true,
+ "data_current": false,
  "finalists_run": "2026-11-11",
  "missing": [],
- "errors": [],
+ "errors": [
+  "attempt 1: Yahoo's latest bar is 2026-11-10, not today; retrying",
+  "attempt 2: Yahoo's latest bar is 2026-11-10, not today; retrying",
+  "attempt 3: Yahoo's latest bar is 2026-11-10, not today; retrying",
+  "attempt 4: Yahoo's latest bar is 2026-11-10, not today; retrying"
+ ],
  "change_1d": {
   "AAPL": -0.62,
   "ABBV": 0.2,
