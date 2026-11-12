@@ -1,4 +1,4 @@
-"""Paper-trading engine for the swing screener.  One run = one trading day.
+"""Paper-trading engine for the swing screener (rules v2).  One run = one trading day.
 
 Usage:
   python3 engine.py --state state.json --date YYYY-MM-DD --prices prices.json \
@@ -12,10 +12,14 @@ Rules (keep in sync with the dashboard's "How it trades" section):
             earnings    -> after the report: on the session after the reaction day, buy if
                            close > last close before the report AND close > 50-day
             pullback    -> buy once close <= entry_hi, staying >= entry_lo*0.97, no earnings in 3 days
-  Sizing    1% of equity at risk: shares = 1% equity / (fill - stop); max 20% of equity; max 10 names
-  Stop      fill - 2.5 x ATR; trails to (highest close - 3 x ATR) and never moves down
-  Exits     close <= stop | stock fails the weekly screen gates | 40 sessions held and not above
-            entry | 126 sessions held (6 months)
+  Sleeve    v2: the swing trades are a 30% sleeve of the book; the other 70% stays in VOO
+  Sizing    1% of the sleeve at risk over a 2.5 x ATR distance: shares = 1% x sleeve / (2.5 x ATR);
+            max 20% of the sleeve per name; max 10 names; no new buy if stocks would exceed the sleeve
+  Stop      v2 has NO price stop (the backtest showed ATR stops sold good stocks on normal pullbacks).
+            "stop0" is kept only as the sizing / R-multiple reference.
+  Exits     stock fails the weekly screen gates | 40 sessions held and not above entry | 126 sessions held
+  Switch    the first v2 session closes every position opened under v1 ("Switched to v2 rules"), so the
+            v1 and v2 track records stay separate (each trade records its rules version)
   Cash      idle cash sits in VOO; VOO is sold to fund entries
   Costs     0.05% slippage on every fill
 """
@@ -28,6 +32,9 @@ MAX_POS = 10
 TRAIL_ATR = 3.0
 STOP_ATR = 2.5
 TIME_STOP = 40
+RULES = "v2"
+SLEEVE = 0.30          # v2: swing sleeve as a share of the whole book
+USE_PRICE_STOP = False # v2: no ATR stop exits
 MAX_HOLD = 126
 
 ap = argparse.ArgumentParser()
@@ -91,12 +98,15 @@ for p in S["positions"]:
     p["lo_close"] = min(p["lo_close"], c)
 
 # ---- 2. exits -----------------------------------------------------------------------
+switching = S.get("rules_version", "v1") != RULES
 keep = []
 for p in S["positions"]:
     c = px[p["symbol"]]
     sc = screen.get(p["symbol"])
     reason = None
-    if c <= p["stop"]:
+    if switching:
+        reason = f"Switched to {RULES} rules"
+    elif USE_PRICE_STOP and c <= p["stop"]:
         reason = "Stop hit"
     elif sc is not None and sc.get("passes") in (False, "false"):
         reason = "Failed weekly screen: " + (sc.get("why_not") or "gates")
@@ -113,6 +123,7 @@ for p in S["positions"]:
         S["trades"].append({**{k: p[k] for k in ("id", "symbol", "group", "setup", "entry_date", "fill", "shares",
                                                     "stop0", "atr", "features", "spy_at_entry")},
                             "exit_date": D, "exit_price": round(exit_px, 2), "exit_reason": reason,
+                            "rules": p.get("rules", "v1"),
                             "r_multiple": round(r_mult, 2), "ret_pct": round(ret, 2),
                             "spy_ret_pct": round(spy_ret, 2), "excess_pct": round(ret - spy_ret, 2),
                             "days_held": p["days_held"],
@@ -123,9 +134,15 @@ for p in S["positions"]:
     else:
         keep.append(p)
 S["positions"] = keep
+if switching:
+    S["rules_version"] = RULES
+    S["rules_since"] = D
+    S["watch"] = []                 # rebuilt from the next v2 screen
+    S["finalists_url"] = None
+    ev("", "Rules", f"Switched to {RULES}: 30% swing sleeve, strength gate 80, no sector cap, no price stops")
 
-# ---- 3. trail stops -----------------------------------------------------------------
-for p in S["positions"]:
+# ---- 3. trail stops (v1 only) ------------------------------------------------------
+for p in (S["positions"] if USE_PRICE_STOP else []):
     new = p["hi_close"] - TRAIL_ATR * p["atr"]
     if new > p["stop"]:
         p["stop"] = round(new, 2)
@@ -139,6 +156,8 @@ if A.finalists_url != S.get("finalists_url"):
     for f in sorted(fin, key=lambda r: r["rank"]):
         if f["symbol"] in held:
             continue
+        if f.get("rules_version", "v1") != RULES:
+            continue   # only a screen built with the same rules version can feed this engine
         setup = setup_of.get(f["status"])
         if not setup:
             continue
@@ -169,13 +188,19 @@ def buy(w, setup_label, why):
     if stop >= fill:
         stop = fill * 0.92
     eq = equity()
+    sleeve = SLEEVE * eq
     rps = fill - stop
-    shares = RISK * eq / rps
-    shares = min(shares, MAX_W * eq / fill)
-    cost = shares * fill
+    shares = RISK * sleeve / rps
+    shares = min(shares, MAX_W * sleeve / fill)
     if len(S["positions"]) >= MAX_POS:
         ev(w["symbol"], "Skip", "Already holding the maximum of 10 names")
         return False
+    room = sleeve - pos_value()
+    if room < 100:
+        ev(w["symbol"], "Skip", f"Swing sleeve full (stocks ${pos_value():,.0f} of ${sleeve:,.0f})")
+        return False
+    shares = min(shares, room / fill)
+    cost = shares * fill
     need = cost - S["cash"]
     if need > 0:
         voo_px = px["VOO"] * (1 - SLIP)
@@ -192,9 +217,9 @@ def buy(w, setup_label, why):
     S["positions"].append({"id": tid, "symbol": w["symbol"], "group": w.get("group"), "setup": setup_label,
                            "entry_date": D, "fill": round(fill, 4), "shares": round(shares, 4),
                            "stop0": round(stop, 2), "stop": round(stop, 2), "atr": atr or round(fill * 0.03, 2),
-                           "hi_close": c, "lo_close": c, "days_held": 0, "spy_at_entry": px["SPY"],
+                           "hi_close": c, "lo_close": c, "days_held": 0, "spy_at_entry": px["SPY"], "rules": RULES,
                            "features": {**w["features"], "vix_regime": S.get("vix")}})
-    ev(w["symbol"], "Buy", f"{setup_label}: {shares:.2f} sh at ${fill:,.2f}, stop ${stop:,.2f}, ${cost:,.0f} ({cost / eq * 100:.1f}% of equity). {why}")
+    ev(w["symbol"], "Buy", f"{setup_label}: {shares:.2f} sh at ${fill:,.2f}, risk reference ${stop:,.2f} (no price stop in v2), ${cost:,.0f} ({cost / eq * 100:.1f}% of the book, {cost / sleeve * 100:.1f}% of the sleeve). {why}")
     return True
 
 remaining = []

@@ -1,6 +1,6 @@
 # Swing screener v2: proposal (awaiting Cade's approval)
 
-**Status:** proposal only. Nothing in the live screen or paper engine has changed.
+**Status:** approved by Cade on 2026-11-11 and live: weekly screen from the 2026-11-16 run, paper engine from the 2026-11-12 session (which closes the v1 positions).
 **Evidence:** `data/research/` (run 2026-11-11 by `pipeline/research.py` on dividend-adjusted prices and point-in-time S&P 500 membership). All numbers are backtests: simulated, with some survivorship bias left (about 15% of past index members have no Yahoo price history), and not financial advice.
 
 ## The problem with v1

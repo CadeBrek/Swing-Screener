@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import (DATA, today_et, path, dump, load, read_list, download, ret_since, wilder_atr,
                     earnings_info, first_event_on_or_after, yahoo)
 from insiders import insider_read
-import rules_v1 as rules
+import rules_v2 as rules
 
 UNIVERSE_SIZE = 100
 MIN_CAP, MIN_PRICE, MIN_VOL, MIN_BARS = 10e9, 10, 1_000_000, 126
@@ -191,7 +191,7 @@ def main():
             entry_hi = r.price
             entry_lo = r.price - atr if atr else r.price
         if atr:
-            stop, basis = entry_hi - rules.STOP_ATR * atr, "2.5 × ATR below entry"
+            stop, basis = entry_hi - rules.STOP_ATR * atr, "risk reference: 2.5 × ATR below entry (no price stop in v2)"
         else:
             stop, basis = r.ma50 * 0.98, "2% under 50-day (ATR unavailable)"
             errors.append(f"{s}: ATR unavailable, used 50-day fallback")
@@ -205,7 +205,7 @@ def main():
             "earnings": str(nxt) if nxt else None, "days_to_earnings": dte, "eps_surprise": surprise,
             "target": r2(target), "target_upside": round((target / r.price - 1) * 100, 1) if target else None,
             "sentiment": None, "analyst_rec": r2(rec), **ins,
-            "thesis": "", "catch": "", "invalidation": "",
+            "thesis": "", "catch": "", "invalidation": "", "rules_version": rules.RULES_VERSION,
         })
 
     prices_all = {s.replace("^", ""): r2(d["Close"].iloc[-1]) for s, d in bars.items() if d.index[-1] == asof}
