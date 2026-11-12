@@ -8,10 +8,10 @@ import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import DATA, download
-from backtest import sectors, SECOND_CLASS
+from backtest_v1 import sectors, SECOND_CLASS
 import research
 
-OUT = os.path.join(DATA, "export")
+OUT = os.environ.get("EXPORT_DIR") or os.path.join(DATA, "export")
 
 
 def main():

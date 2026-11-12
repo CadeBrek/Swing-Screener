@@ -1,313 +1,161 @@
 {
  "4w": [
   {
-   "label": "Finalists",
-   "n": 4517,
-   "weeks": 566,
-   "stocks": 181,
-   "avg_excess_pct": 0.17,
-   "median_excess_pct": -0.04,
-   "beat_spy_pct": 49.6
+   "label": "v2 finalists",
+   "n": 4947,
+   "weeks": 619,
+   "avg_excess_pct": 0.36,
+   "beat_spy_pct": 50.8
   },
   {
-   "label": "Passed, not picked",
-   "n": 16071,
-   "weeks": 564,
-   "stocks": 225,
-   "avg_excess_pct": 0.41,
-   "median_excess_pct": -0.01,
-   "beat_spy_pct": 50.0
+   "label": "Passed v2 gates, not picked",
+   "n": 7557,
+   "weeks": 617,
+   "avg_excess_pct": 0.22,
+   "beat_spy_pct": 49.7
   },
   {
-   "label": "Failed the gates",
-   "n": 35790,
-   "weeks": 566,
-   "stocks": 240,
-   "avg_excess_pct": 0.04,
-   "median_excess_pct": -0.2,
-   "beat_spy_pct": 48.6
+   "label": "Strength 60-79 (passed v1, not v2)",
+   "n": 10299,
+   "weeks": 616,
+   "avg_excess_pct": -0.08,
+   "beat_spy_pct": 48.9
   },
   {
-   "label": "Passers, strength 60-69",
-   "n": 4445,
-   "weeks": 552,
-   "stocks": 200,
-   "avg_excess_pct": 0.11,
-   "median_excess_pct": -0.05,
-   "beat_spy_pct": 49.5
-  },
-  {
-   "label": "Passers, strength 70-79",
-   "n": 4825,
-   "weeks": 561,
-   "stocks": 206,
-   "avg_excess_pct": -0.13,
-   "median_excess_pct": -0.25,
-   "beat_spy_pct": 48.0
+   "label": "Failed the trend gates",
+   "n": 26278,
+   "weeks": 619,
+   "avg_excess_pct": 0.09,
+   "beat_spy_pct": 49.4
   },
   {
    "label": "Passers, strength 80-89",
-   "n": 5236,
-   "weeks": 565,
-   "stocks": 199,
-   "avg_excess_pct": 0.26,
-   "median_excess_pct": -0.07,
-   "beat_spy_pct": 49.6
+   "n": 5794,
+   "weeks": 619,
+   "avg_excess_pct": 0.05,
+   "beat_spy_pct": 49.4
   },
   {
    "label": "Passers, strength 90-100",
-   "n": 6082,
-   "weeks": 566,
-   "stocks": 192,
-   "avg_excess_pct": 1.0,
-   "median_excess_pct": 0.27,
-   "beat_spy_pct": 51.9
+   "n": 6710,
+   "weeks": 619,
+   "avg_excess_pct": 0.47,
+   "beat_spy_pct": 50.7
   },
   {
-   "label": "Strength 50-59 (would pass only at gate 50)",
-   "n": 3748,
-   "weeks": 525,
-   "stocks": 193,
-   "avg_excess_pct": -0.09,
-   "median_excess_pct": -0.12,
-   "beat_spy_pct": 49.1
+   "label": "Passers < 5% above the 50-day",
+   "n": 7048,
+   "weeks": 618,
+   "avg_excess_pct": 0.2,
+   "beat_spy_pct": 50.0
   },
   {
-   "label": "Passers, ext < 5% above 50-day",
-   "n": 12278,
-   "weeks": 566,
-   "stocks": 224,
-   "avg_excess_pct": 0.27,
-   "median_excess_pct": -0.05,
-   "beat_spy_pct": 49.6
+   "label": "Passers 5-12% above the 50-day",
+   "n": 3908,
+   "weeks": 592,
+   "avg_excess_pct": 0.31,
+   "beat_spy_pct": 51.0
   },
   {
-   "label": "Passers, ext 5-8% above 50-day",
-   "n": 3347,
-   "weeks": 537,
-   "stocks": 191,
-   "avg_excess_pct": 0.18,
-   "median_excess_pct": 0.14,
-   "beat_spy_pct": 51.4
-  },
-  {
-   "label": "Passers, ext 8-12% above 50-day",
-   "n": 2321,
-   "weeks": 503,
-   "stocks": 172,
-   "avg_excess_pct": 0.36,
-   "median_excess_pct": -0.15,
-   "beat_spy_pct": 48.8
-  },
-  {
-   "label": "Passers, ext 12-15% above 50-day",
-   "n": 930,
-   "weeks": 381,
-   "stocks": 152,
-   "avg_excess_pct": -0.19,
-   "median_excess_pct": -0.58,
-   "beat_spy_pct": 47.0
-  },
-  {
-   "label": "Passers, ext > 15% above 50-day",
-   "n": 1712,
-   "weeks": 396,
-   "stocks": 132,
-   "avg_excess_pct": 1.55,
-   "median_excess_pct": 0.42,
-   "beat_spy_pct": 52.0
+   "label": "Passers > 12% above the 50-day",
+   "n": 1548,
+   "weeks": 431,
+   "avg_excess_pct": 0.58,
+   "beat_spy_pct": 48.3
   },
   {
    "label": "Finalists ranked 1-4",
-   "n": 2264,
-   "weeks": 566,
-   "stocks": 163,
-   "avg_excess_pct": 0.72,
-   "median_excess_pct": 0.28,
-   "beat_spy_pct": 52.0
+   "n": 2476,
+   "weeks": 619,
+   "avg_excess_pct": 0.49,
+   "beat_spy_pct": 51.5
   },
   {
    "label": "Finalists ranked 5-8",
-   "n": 2253,
-   "weeks": 565,
-   "stocks": 168,
-   "avg_excess_pct": -0.39,
-   "median_excess_pct": -0.34,
-   "beat_spy_pct": 47.2
-  },
-  {
-   "label": "Passers ranked 1-8 by score",
-   "n": 4523,
-   "weeks": 566,
-   "stocks": 182,
-   "avg_excess_pct": 0.53,
-   "median_excess_pct": 0.26,
-   "beat_spy_pct": 51.9
-  },
-  {
-   "label": "Passers ranked 9-16 by score",
-   "n": 4479,
-   "weeks": 563,
-   "stocks": 189,
-   "avg_excess_pct": 0.13,
-   "median_excess_pct": -0.19,
-   "beat_spy_pct": 48.8
+   "n": 2471,
+   "weeks": 618,
+   "avg_excess_pct": 0.24,
+   "beat_spy_pct": 50.1
   }
  ],
  "13w": [
   {
-   "label": "Finalists",
-   "n": 4445,
-   "weeks": 557,
-   "stocks": 180,
-   "avg_excess_pct": 1.31,
-   "median_excess_pct": -0.33,
-   "beat_spy_pct": 48.8
+   "label": "v2 finalists",
+   "n": 4875,
+   "weeks": 610,
+   "avg_excess_pct": 1.27,
+   "beat_spy_pct": 47.9
   },
   {
-   "label": "Passed, not picked",
-   "n": 15793,
-   "weeks": 555,
-   "stocks": 225,
-   "avg_excess_pct": 1.38,
-   "median_excess_pct": -0.43,
-   "beat_spy_pct": 48.7
-  },
-  {
-   "label": "Failed the gates",
-   "n": 35240,
-   "weeks": 557,
-   "stocks": 236,
-   "avg_excess_pct": 0.11,
-   "median_excess_pct": -0.72,
-   "beat_spy_pct": 47.5
-  },
-  {
-   "label": "Passers, strength 60-69",
-   "n": 4359,
-   "weeks": 543,
-   "stocks": 198,
-   "avg_excess_pct": 0.07,
-   "median_excess_pct": -0.53,
-   "beat_spy_pct": 48.0
-  },
-  {
-   "label": "Passers, strength 70-79",
-   "n": 4748,
-   "weeks": 552,
-   "stocks": 204,
-   "avg_excess_pct": 0.14,
-   "median_excess_pct": -0.81,
-   "beat_spy_pct": 47.3
-  },
-  {
-   "label": "Passers, strength 80-89",
-   "n": 5149,
-   "weeks": 556,
-   "stocks": 198,
-   "avg_excess_pct": 0.85,
-   "median_excess_pct": -0.41,
-   "beat_spy_pct": 48.6
-  },
-  {
-   "label": "Passers, strength 90-100",
-   "n": 5982,
-   "weeks": 557,
-   "stocks": 192,
-   "avg_excess_pct": 3.71,
-   "median_excess_pct": 0.14,
-   "beat_spy_pct": 50.4
-  },
-  {
-   "label": "Strength 50-59 (would pass only at gate 50)",
-   "n": 3674,
-   "weeks": 516,
-   "stocks": 189,
-   "avg_excess_pct": 0.19,
-   "median_excess_pct": -0.32,
-   "beat_spy_pct": 48.6
-  },
-  {
-   "label": "Passers, ext < 5% above 50-day",
-   "n": 12087,
-   "weeks": 557,
-   "stocks": 224,
-   "avg_excess_pct": 0.69,
-   "median_excess_pct": -0.7,
+   "label": "Passed v2 gates, not picked",
+   "n": 7446,
+   "weeks": 608,
+   "avg_excess_pct": 0.59,
    "beat_spy_pct": 47.6
   },
   {
-   "label": "Passers, ext 5-8% above 50-day",
-   "n": 3297,
-   "weeks": 528,
-   "stocks": 191,
-   "avg_excess_pct": 0.57,
-   "median_excess_pct": -0.1,
-   "beat_spy_pct": 49.7
+   "label": "Strength 60-79 (passed v1, not v2)",
+   "n": 10136,
+   "weeks": 607,
+   "avg_excess_pct": -0.12,
+   "beat_spy_pct": 48.7
   },
   {
-   "label": "Passers, ext 8-12% above 50-day",
-   "n": 2282,
-   "weeks": 494,
-   "stocks": 171,
-   "avg_excess_pct": 1.08,
-   "median_excess_pct": -0.2,
-   "beat_spy_pct": 49.1
+   "label": "Failed the trend gates",
+   "n": 25932,
+   "weeks": 610,
+   "avg_excess_pct": -0.04,
+   "beat_spy_pct": 48.3
   },
   {
-   "label": "Passers, ext 12-15% above 50-day",
-   "n": 908,
-   "weeks": 374,
-   "stocks": 150,
-   "avg_excess_pct": 1.91,
-   "median_excess_pct": -0.83,
-   "beat_spy_pct": 48.0
+   "label": "Passers, strength 80-89",
+   "n": 5708,
+   "weeks": 610,
+   "avg_excess_pct": 0.1,
+   "beat_spy_pct": 47.5
   },
   {
-   "label": "Passers, ext > 15% above 50-day",
-   "n": 1664,
-   "weeks": 387,
-   "stocks": 129,
-   "avg_excess_pct": 7.92,
-   "median_excess_pct": 2.48,
-   "beat_spy_pct": 55.0
+   "label": "Passers, strength 90-100",
+   "n": 6613,
+   "weeks": 610,
+   "avg_excess_pct": 1.51,
+   "beat_spy_pct": 47.9
+  },
+  {
+   "label": "Passers < 5% above the 50-day",
+   "n": 6952,
+   "weeks": 609,
+   "avg_excess_pct": 0.24,
+   "beat_spy_pct": 45.9
+  },
+  {
+   "label": "Passers 5-12% above the 50-day",
+   "n": 3849,
+   "weeks": 583,
+   "avg_excess_pct": 0.75,
+   "beat_spy_pct": 49.9
+  },
+  {
+   "label": "Passers > 12% above the 50-day",
+   "n": 1520,
+   "weeks": 422,
+   "avg_excess_pct": 3.92,
+   "beat_spy_pct": 50.8
   },
   {
    "label": "Finalists ranked 1-4",
-   "n": 2228,
-   "weeks": 557,
-   "stocks": 161,
-   "avg_excess_pct": 2.8,
-   "median_excess_pct": 0.46,
-   "beat_spy_pct": 51.9
+   "n": 2440,
+   "weeks": 610,
+   "avg_excess_pct": 1.7,
+   "beat_spy_pct": 50.0
   },
   {
    "label": "Finalists ranked 5-8",
-   "n": 2217,
-   "weeks": 556,
-   "stocks": 168,
-   "avg_excess_pct": -0.2,
-   "median_excess_pct": -1.25,
-   "beat_spy_pct": 45.7
-  },
-  {
-   "label": "Passers ranked 1-8 by score",
-   "n": 4451,
-   "weeks": 557,
-   "stocks": 182,
-   "avg_excess_pct": 2.3,
-   "median_excess_pct": 0.06,
-   "beat_spy_pct": 50.2
-  },
-  {
-   "label": "Passers ranked 9-16 by score",
-   "n": 4407,
-   "weeks": 554,
-   "stocks": 189,
-   "avg_excess_pct": 0.78,
-   "median_excess_pct": -0.89,
-   "beat_spy_pct": 47.3
+   "n": 2435,
+   "weeks": 609,
+   "avg_excess_pct": 0.85,
+   "beat_spy_pct": 45.8
   }
  ],
- "note": "Each row is stock-weeks; weekly rows of the same stock overlap, so the effective sample is smaller than n. Survivorship bias lifts every row about equally, so compare rows with each other rather than reading any one row as an expected return."
+ "note": "stock-weeks overlap, so effective samples are smaller than n; compare rows with each other"
 }

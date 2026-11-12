@@ -1,106 +1,158 @@
 {
  "run": "2026-11-11",
+ "rules_version": "v2",
  "window": [
-  "2015-12-14",
-  "2026-11-09"
+  "2014-12-12",
+  "2026-11-11"
  ],
- "weeks": 570,
- "universe": "today's S&P 500 members, top 100 by 63-day dollar volume each week",
- "rules_version": "v1",
- "baseline": {
-  "rs_gate": 60,
-  "stop_atr": 2.5,
-  "pullback_cut": 12
+ "data": {
+  "membership": "fja05680/sp500 (S&P 500 Historical Components & Changes.csv)",
+  "dividend_adjusted": true,
+  "stocks_with_prices": 473
  },
- "baseline_stats": {
-  "rs_gate": 60.0,
-  "stop_atr": 2.5,
-  "pullback_cut": 12.0,
-  "total_return_pct": 151.8,
-  "cagr_pct": 8.9,
-  "max_drawdown_pct": -32.4,
-  "sharpe": 0.53,
-  "trades": 724.0,
-  "win_rate_pct": 40.3,
-  "avg_trade_pct": 1.66,
-  "avg_names_held": 7.3
- },
- "spy_stats": {
-  "total_return_pct": 274.5,
-  "cagr_pct": 12.9,
-  "max_drawdown_pct": -34.1,
-  "sharpe": 0.77
- },
- "best_by_sharpe": [
-  {
-   "rs_gate": 80,
-   "stop_atr": 3.0,
-   "pullback_cut": 8,
-   "total_return_pct": 275.5,
-   "cagr_pct": 12.9,
-   "max_drawdown_pct": -32.3,
-   "sharpe": 0.71,
-   "trades": 937,
-   "win_rate_pct": 47.1,
-   "avg_trade_pct": 1.64,
-   "avg_names_held": 6.8
+ "v2_book_30_70": {
+  "full": {
+   "cagr_pct": 15.27,
+   "vol_pct": 17.97,
+   "sharpe": 0.881,
+   "sortino": 1.095,
+   "max_dd_pct": -32.94,
+   "calmar": 0.464,
+   "beta": 1.0,
+   "alpha_pct": 1.48
   },
-  {
-   "rs_gate": 80,
-   "stop_atr": 2.5,
-   "pullback_cut": 8,
-   "total_return_pct": 242.3,
-   "cagr_pct": 12.0,
-   "max_drawdown_pct": -31.3,
-   "sharpe": 0.65,
-   "trades": 896,
-   "win_rate_pct": 46.7,
-   "avg_trade_pct": 1.66,
-   "avg_names_held": 6.4
+  "since_2022": {
+   "cagr_pct": 13.53,
+   "vol_pct": 17.66,
+   "sharpe": 0.807,
+   "sortino": 1.128,
+   "max_dd_pct": -23.81,
+   "calmar": 0.568,
+   "beta": 0.97,
+   "alpha_pct": 2.15
   },
-  {
-   "rs_gate": 80,
-   "stop_atr": 2.0,
-   "pullback_cut": 8,
-   "total_return_pct": 228.1,
-   "cagr_pct": 11.5,
-   "max_drawdown_pct": -31.1,
-   "sharpe": 0.62,
-   "trades": 871,
-   "win_rate_pct": 45.6,
-   "avg_trade_pct": 1.77,
-   "avg_names_held": 6.0
-  },
-  {
-   "rs_gate": 80,
-   "stop_atr": 2.0,
-   "pullback_cut": 12,
-   "total_return_pct": 231.3,
-   "cagr_pct": 11.6,
-   "max_drawdown_pct": -36.8,
-   "sharpe": 0.62,
-   "trades": 896,
-   "win_rate_pct": 44.8,
-   "avg_trade_pct": 1.49,
-   "avg_names_held": 6.3
-  },
-  {
-   "rs_gate": 80,
-   "stop_atr": 3.0,
-   "pullback_cut": 12,
-   "total_return_pct": 207.9,
-   "cagr_pct": 10.9,
-   "max_drawdown_pct": -33.8,
-   "sharpe": 0.61,
-   "trades": 983,
-   "win_rate_pct": 46.5,
-   "avg_trade_pct": 1.4,
-   "avg_names_held": 7.4
+  "last_12m": {
+   "cagr_pct": 17.24,
+   "vol_pct": 16.58,
+   "sharpe": 1.042,
+   "sortino": 1.587,
+   "max_dd_pct": -9.88,
+   "calmar": 1.744,
+   "beta": 1.12,
+   "alpha_pct": 3.0
   }
- ],
+ },
+ "v2_swing_alone": {
+  "full": {
+   "cagr_pct": 18.0,
+   "vol_pct": 22.35,
+   "sharpe": 0.853,
+   "sortino": 1.145,
+   "max_dd_pct": -31.36,
+   "calmar": 0.574,
+   "beta": 0.99,
+   "alpha_pct": 4.84
+  },
+  "since_2022": {
+   "cagr_pct": 16.86,
+   "vol_pct": 23.09,
+   "sharpe": 0.791,
+   "sortino": 1.162,
+   "max_dd_pct": -25.29,
+   "calmar": 0.667,
+   "beta": 0.92,
+   "alpha_pct": 6.87
+  },
+  "last_12m": {
+   "cagr_pct": 25.46,
+   "vol_pct": 28.04,
+   "sharpe": 0.949,
+   "sortino": 1.516,
+   "max_dd_pct": -24.68,
+   "calmar": 1.032,
+   "beta": 1.4,
+   "alpha_pct": 8.74
+  },
+  "trades": 627,
+  "win_rate_pct": 49.4,
+  "avg_trade_pct": 3.73
+ },
+ "v1": {
+  "full": {
+   "cagr_pct": 9.47,
+   "vol_pct": 19.21,
+   "sharpe": 0.567,
+   "sortino": 0.735,
+   "max_dd_pct": -37.38,
+   "calmar": 0.253,
+   "beta": 0.87,
+   "alpha_pct": -1.66
+  },
+  "since_2022": {
+   "cagr_pct": 4.73,
+   "vol_pct": 17.93,
+   "sharpe": 0.348,
+   "sortino": 0.492,
+   "max_dd_pct": -27.0,
+   "calmar": 0.175,
+   "beta": 0.73,
+   "alpha_pct": -2.83
+  },
+  "last_12m": {
+   "cagr_pct": 5.79,
+   "vol_pct": 18.39,
+   "sharpe": 0.398,
+   "sortino": 0.59,
+   "max_dd_pct": -12.66,
+   "calmar": 0.458,
+   "beta": 0.9,
+   "alpha_pct": -4.09
+  },
+  "trades": 741,
+  "win_rate_pct": 39.4,
+  "avg_trade_pct": 1.58
+ },
+ "spy": {
+  "full": {
+   "cagr_pct": 13.73,
+   "vol_pct": 17.54,
+   "sharpe": 0.822,
+   "sortino": 1.008,
+   "max_dd_pct": -33.72,
+   "calmar": 0.407,
+   "beta": 1.0,
+   "alpha_pct": -0.0
+  },
+  "since_2022": {
+   "cagr_pct": 11.52,
+   "vol_pct": 17.37,
+   "sharpe": 0.715,
+   "sortino": 0.983,
+   "max_dd_pct": -24.5,
+   "calmar": 0.47,
+   "beta": 1.0,
+   "alpha_pct": -0.0
+  },
+  "last_12m": {
+   "cagr_pct": 12.5,
+   "vol_pct": 13.73,
+   "sharpe": 0.927,
+   "sortino": 1.278,
+   "max_dd_pct": -8.88,
+   "calmar": 1.407,
+   "beta": 1.0,
+   "alpha_pct": 0.0
+  }
+ },
+ "neighbourhood": {
+  "variants": 36,
+  "v2_rank_by_full_blend_sharpe": 3,
+  "share_of_variants_whose_30_70_beats_spy_full_sharpe_pct": 55.6,
+  "median_blend_full_sharpe": 0.827
+ },
  "caveats": [
-  "survivorship bias: today's index members only, so results are optimistic",
-  "simplified trading plan: no earnings waits, pullback-zone entries or time stops; idle cash earns 0",
-  "36 rule variants were tried: the best one is partly luck (data snooping); prefer variants that win across neighbouring settings and in the live learning log"
+  "about 15% of past index members lack Yahoo history (mostly acquired): optimistic",
+  "30/70 is rebalanced monthly here; the live engine caps new buys at the sleeve instead",
+  "no waits around earnings (no free historical earnings calendar)"
  ]
 }

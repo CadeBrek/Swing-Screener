@@ -28,7 +28,7 @@ import requests
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import ROOT, DATA, dump, download
 import rules_v1 as rules
-from backtest import months_back_rows, sectors, SECOND_CLASS
+from backtest_v1 import months_back_rows, sectors, SECOND_CLASS
 
 IS_END = pd.Timestamp("2021-12-31")
 ADJ = [False]   # set when dividend-adjusted prices are used
