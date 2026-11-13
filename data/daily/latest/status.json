@@ -1,13 +1,15 @@
 {
- "date": "2026-11-11",
+ "date": "2026-11-12",
  "data_date": "2026-11-11",
  "market_open": true,
- "data_current": true,
+ "data_current": false,
  "finalists_run": "2026-11-11",
  "missing": [],
  "errors": [
-  "attempt 1: Yahoo's latest bar is 2026-11-10, not today; retrying",
-  "attempt 2: Yahoo's latest bar is 2026-11-10, not today; retrying"
+  "attempt 1: Yahoo's latest bar is 2026-11-11, not today; retrying",
+  "attempt 2: Yahoo's latest bar is 2026-11-11, not today; retrying",
+  "attempt 3: Yahoo's latest bar is 2026-11-11, not today; retrying",
+  "attempt 4: Yahoo's latest bar is 2026-11-11, not today; retrying"
  ],
  "change_1d": {
   "AAPL": 2.04,
@@ -114,5 +116,5 @@
   "WMT": 0.1,
   "XOM": 1.36
  },
- "ok": true
+ "ok": false
 }
