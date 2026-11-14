@@ -1,15 +1,22 @@
 {
- "date": "2026-11-12",
- "data_date": "2026-11-11",
+ "date": "2026-11-13",
+ "data_date": "2026-11-13",
  "market_open": true,
- "data_current": false,
+ "data_current": true,
  "finalists_run": "2026-11-11",
- "missing": [],
- "errors": [
-  "attempt 1: Yahoo's latest bar is 2026-11-11, not today; retrying",
-  "attempt 2: Yahoo's latest bar is 2026-11-11, not today; retrying",
-  "attempt 3: Yahoo's latest bar is 2026-11-11, not today; retrying",
-  "attempt 4: Yahoo's latest bar is 2026-11-11, not today; retrying"
+ "missing": [
+  "ABBV",
+  "ANET",
+  "CRWD",
+  "DELL",
+  "GEV",
+  "META",
+  "PANW",
+  "PLTR",
+  "PSX",
+  "SNDK",
+  "UBER"
  ],
- "ok": false
+ "errors": [],
+ "ok": true
 }
