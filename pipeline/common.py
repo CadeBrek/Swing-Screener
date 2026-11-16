@@ -64,17 +64,44 @@ def download(symbols, period="2y", tries=3, adj=False):
                 if attempt == tries - 1:
                     raise
                 time.sleep(5 * (attempt + 1))
-        for s in chunk:
+        _collect(df, chunk, out, adj)
+    # Yahoo often drops a few symbols from a big threaded batch without raising (rate limits on
+    # GitHub's shared IPs). Retry the gaps in small, unthreaded batches, then one at a time.
+    for rnd in range(3):
+        gaps = [s for s in symbols if s not in out]
+        if not gaps:
+            break
+        time.sleep(3 * (rnd + 1))
+        for i in range(0, len(gaps), 10):
+            part = gaps[i:i + 10]
             try:
-                d = df[s] if isinstance(df.columns, pd.MultiIndex) else df
-                cols = ["Open", "High", "Low", "Close", "Volume"] + (["Adj Close"] if adj and "Adj Close" in d else [])
-                d = d[cols].dropna(subset=["Close"])
-            except KeyError:
-                continue
-            if len(d):
-                d.index = pd.to_datetime(d.index).tz_localize(None)
-                out[s] = d
+                df = yf.download(part, period=period, interval="1d", auto_adjust=False,
+                                 group_by="ticker", threads=False, progress=False)
+                _collect(df, part, out, adj)
+            except Exception:
+                pass
+    for s in [s for s in symbols if s not in out]:
+        try:
+            _collect(yf.Ticker(s).history(period=period, interval="1d", auto_adjust=False), [s], out, adj)
+        except Exception:
+            pass
+        time.sleep(1)
     return out
+
+
+def _collect(df, chunk, out, adj):
+    if df is None or len(df) == 0:
+        return
+    for s in chunk:
+        try:
+            d = df[s] if isinstance(df.columns, pd.MultiIndex) else df
+            cols = ["Open", "High", "Low", "Close", "Volume"] + (["Adj Close"] if adj and "Adj Close" in d else [])
+            d = d[cols].dropna(subset=["Close"])
+        except KeyError:
+            continue
+        if len(d):
+            d.index = pd.to_datetime(d.index).tz_localize(None)
+            out[s] = d
 
 
 def ret_since(close, months, asof=None):
