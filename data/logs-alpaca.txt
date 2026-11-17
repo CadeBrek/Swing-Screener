@@ -1,8 +1,8 @@
 {
- "date": "2026-11-13",
+ "date": "2026-11-16",
  "source": "Alpaca options snapshots (indicative feed)",
  "errors": [],
- "avg_model_vs_market_pct": 0.5,
- "avg_abs_model_gap_pct": 7.1,
+ "avg_model_vs_market_pct": -3.2,
+ "avg_abs_model_gap_pct": 7.5,
  "status": "6 of 6 calls priced"
 }
