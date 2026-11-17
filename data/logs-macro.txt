@@ -2,19 +2,19 @@ Extensions to add: bls@2.0.0, cboe@2.0.0, cftc@2.0.0, congress_gov@2.0.0, deribi
 
 Building...
 {
- "date": "2026-11-11",
+ "date": "2026-11-16",
  "source": "OpenBB (Federal Reserve; FRED when a key is set)",
  "treasury_yields_pct": {
-  "month_3": 4.24,
-  "year_2": 4.56,
-  "year_10": 4.88,
-  "year_30": 5.26
+  "month_3": 4.32,
+  "year_2": 4.88,
+  "year_10": 5.15,
+  "year_30": 5.47
  },
- "yields_as_of": "2026-11-09",
- "spread_2s10s_pct": 0.32,
- "spread_3m10y_pct": 0.64,
+ "yields_as_of": "2026-11-13",
+ "spread_2s10s_pct": 0.27,
+ "spread_3m10y_pct": 0.83,
  "curve_read": "normal (10y above 3m)",
- "ten_year_change_1y_pct": 0.77,
+ "ten_year_change_1y_pct": 1.04,
  "fed_funds_effective_pct": 3.88,
  "fred": "not set up (add a free FRED key as the GitHub secret FRED_API_KEY for CPI, unemployment, credit spreads)",
  "errors": []
