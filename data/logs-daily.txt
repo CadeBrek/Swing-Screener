@@ -1,6 +1,6 @@
 {
- "date": "2026-11-17",
- "data_date": "2026-11-17",
+ "date": "2026-11-18",
+ "data_date": "2026-11-18",
  "market_open": true,
  "data_current": true,
  "finalists_run": "2026-11-16",
