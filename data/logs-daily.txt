@@ -1,21 +1,11 @@
 {
- "date": "2026-11-19",
- "data_date": "2026-11-19",
+ "date": "2026-11-20",
+ "data_date": "2026-11-20",
  "market_open": true,
  "data_current": true,
  "finalists_run": "2026-11-16",
  "missing": [
-  "ABBV",
-  "ANET",
-  "CRWD",
-  "DELL",
-  "GEV",
-  "META",
-  "PANW",
-  "PLTR",
-  "PSX",
-  "SNDK",
-  "UBER"
+  "SNDK"
  ],
  "errors": [],
  "ok": true
