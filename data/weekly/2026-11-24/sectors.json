@@ -1,0 +1,68 @@
+[
+ {
+  "sector": "Energy",
+  "etf": "XLE",
+  "r3m": -5.92,
+  "r6m": 0.64
+ },
+ {
+  "sector": "Health care",
+  "etf": "XLV",
+  "r3m": 2.75,
+  "r6m": 19.7
+ },
+ {
+  "sector": "Consumer staples",
+  "etf": "XLP",
+  "r3m": 5.11,
+  "r6m": 6.58
+ },
+ {
+  "sector": "Technology",
+  "etf": "XLK",
+  "r3m": -11.42,
+  "r6m": -9.98
+ },
+ {
+  "sector": "Materials",
+  "etf": "XLB",
+  "r3m": -6.8,
+  "r6m": -0.78
+ },
+ {
+  "sector": "Consumer discretionary",
+  "etf": "XLY",
+  "r3m": -0.92,
+  "r6m": -1.89
+ },
+ {
+  "sector": "Communication services",
+  "etf": "XLC",
+  "r3m": -7.0,
+  "r6m": -10.27
+ },
+ {
+  "sector": "Financials",
+  "etf": "XLF",
+  "r3m": -3.18,
+  "r6m": 7.14
+ },
+ {
+  "sector": "Real estate",
+  "etf": "XLRE",
+  "r3m": -4.84,
+  "r6m": -3.73
+ },
+ {
+  "sector": "Industrials",
+  "etf": "XLI",
+  "r3m": -9.86,
+  "r6m": -5.41
+ },
+ {
+  "sector": "Utilities",
+  "etf": "XLU",
+  "r3m": 1.29,
+  "r6m": -4.48
+ }
+]
