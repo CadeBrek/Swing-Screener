@@ -1,17 +1,17 @@
 {
- "date": "2026-11-16",
+ "date": "2026-11-24",
  "source": "OpenBB (Federal Reserve; FRED when a key is set)",
  "treasury_yields_pct": {
   "month_3": 4.32,
-  "year_2": 4.88,
-  "year_10": 5.15,
-  "year_30": 5.47
+  "year_2": 4.63,
+  "year_10": 4.92,
+  "year_30": 5.31
  },
- "yields_as_of": "2026-11-13",
- "spread_2s10s_pct": 0.27,
- "spread_3m10y_pct": 0.83,
+ "yields_as_of": "2026-11-20",
+ "spread_2s10s_pct": 0.29,
+ "spread_3m10y_pct": 0.6,
  "curve_read": "normal (10y above 3m)",
- "ten_year_change_1y_pct": 1.04,
+ "ten_year_change_1y_pct": 0.82,
  "fed_funds_effective_pct": 3.88,
  "fred": "not set up (add a free FRED key as the GitHub secret FRED_API_KEY for CPI, unemployment, credit spreads)",
  "errors": []
