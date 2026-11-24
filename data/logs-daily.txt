@@ -1,12 +1,17 @@
 {
- "date": "2026-11-20",
- "data_date": "2026-11-20",
+ "date": "2026-11-24",
+ "data_date": "2026-11-23",
  "market_open": true,
- "data_current": true,
+ "data_current": false,
  "finalists_run": "2026-11-16",
  "missing": [
   "SNDK"
  ],
- "errors": [],
- "ok": true
+ "errors": [
+  "attempt 1: Yahoo's latest bar is 2026-11-23, not today; retrying",
+  "attempt 2: Yahoo's latest bar is 2026-11-23, not today; retrying",
+  "attempt 3: Yahoo's latest bar is 2026-11-23, not today; retrying",
+  "attempt 4: Yahoo's latest bar is 2026-11-23, not today; retrying"
+ ],
+ "ok": false
 }
