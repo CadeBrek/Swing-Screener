@@ -1,12 +1,12 @@
 {
- "date": "2026-11-25",
+ "date": "2026-11-26",
  "data_date": "2026-11-25",
- "market_open": true,
- "data_current": true,
+ "market_open": false,
+ "data_current": false,
  "finalists_run": "2026-11-24",
  "missing": [
   "SNDK"
  ],
  "errors": [],
- "ok": true
+ "ok": false
 }
