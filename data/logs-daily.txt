@@ -1,12 +1,15 @@
+
+1 Failed download:
+['UNP']: OperationalError('database is locked')
 {
- "date": "2026-11-26",
- "data_date": "2026-11-25",
- "market_open": false,
- "data_current": false,
+ "date": "2026-11-27",
+ "data_date": "2026-11-27",
+ "market_open": true,
+ "data_current": true,
  "finalists_run": "2026-11-24",
  "missing": [
   "SNDK"
  ],
  "errors": [],
- "ok": false
+ "ok": true
 }
